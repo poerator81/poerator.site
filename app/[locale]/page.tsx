@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { SelectedWork } from "@/components/home/SelectedWork";
 import { HeroVideo } from "@/components/home/HeroVideo";
+import { MetricsBar } from "@/components/home/MetricsBar";
 import { ServicesGrid } from "@/components/home/ServicesGrid";
 import { TrustedBy } from "@/components/home/TrustedBy";
 import { WhyUs } from "@/components/home/WhyUs";
@@ -35,19 +36,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </Container>
     </section>
     <TrustedBy locale={locale} />
-    <Section className="py-12 md:py-16">
-      <Container className="grid grid-cols-2 gap-5 md:grid-cols-4">
-        {[
-          ["0+", t("metrics.broadcasts")],
-          ["0", t("metrics.years")],
-          ["0", t("metrics.cities")],
-          ["0+", t("metrics.units")],
-        ].map(([value, label]) => <div key={label} className="border-l border-waveform-cyan pl-4">
-          <p className="text-3xl font-semibold text-white md:text-4xl">{value}</p>
-          <p className="mt-2 font-mono text-[10px] leading-4 tracking-wider text-surface-muted">{label}</p>
-        </div>)}
-      </Container>
-    </Section>
+    <MetricsBar locale={locale} />
     <ServicesGrid locale={locale} />
     <Section className="border-t border-surface-border">
       <Container>
