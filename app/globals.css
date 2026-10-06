@@ -72,6 +72,12 @@ textarea {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .hero-video video {
+    display: none;
+  }
+  .hero-video {
+    background: url("/video/hero-poster.jpg") center / cover no-repeat;
+  }
   .trusted-marquee-track {
     animation: none;
     flex-wrap: wrap;

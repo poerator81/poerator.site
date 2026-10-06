@@ -3,6 +3,7 @@ import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { SelectedWork } from "@/components/home/SelectedWork";
+import { HeroVideo } from "@/components/home/HeroVideo";
 import { ServicesGrid } from "@/components/home/ServicesGrid";
 import { TrustedBy } from "@/components/home/TrustedBy";
 import { WhyUs } from "@/components/home/WhyUs";
@@ -22,9 +23,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const t = await getTranslations({ locale, namespace: "home" });
   const cases = await getCases();
   return <>
-    <section className="relative overflow-hidden border-b border-surface-border">
-      <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(ellipse_at_75%_35%,rgba(0,229,199,0.10),transparent_42%)]" />
-      <Container className="relative flex min-h-[620px] flex-col justify-center py-24 md:min-h-[720px]">
+    <section className="relative isolate overflow-hidden border-b border-surface-border">
+      <HeroVideo />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(ellipse_at_75%_35%,rgba(0,229,199,0.10),transparent_42%)]" />
+      <Container className="relative z-10 flex min-h-[620px] flex-col justify-center py-24 md:min-h-[720px]">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-waveform-cyan">{t("eyebrow")}</p>
         <h1 className="mt-7 max-w-5xl text-5xl font-semibold leading-[1.04] tracking-tight text-white sm:text-6xl md:text-7xl">{t("title")}</h1>
         <p className="mt-7 max-w-2xl text-base leading-7 text-surface-muted md:text-lg">{t("intro")}</p>
