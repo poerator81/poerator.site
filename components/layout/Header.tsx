@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
@@ -35,8 +36,15 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-surface-border bg-legal-black/95 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-4 md:px-8">
-        <Link href={localizedPath(locale, "/")} aria-label="Poerator home" className="text-2xl font-black tracking-tight text-white">
-          POERATOR<span className="text-waveform-cyan">.</span>
+        <Link href={localizedPath(locale, "/")} aria-label="Poerator home" className="inline-flex items-center">
+          <Image
+            src="/logo-white.png"
+            alt="Poerator"
+            width={1600}
+            height={423}
+            priority
+            className="h-8 w-auto"
+          />
         </Link>
         <nav aria-label="Main navigation" className="hidden items-center gap-7 lg:flex">
           {items.map(([key, href]) => (

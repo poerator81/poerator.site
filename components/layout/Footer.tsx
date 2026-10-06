@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
 import { HUB_CITIES } from "@/lib/constants";
@@ -20,7 +21,15 @@ export async function Footer({ locale }: { locale: Locale }) {
       <Container className="py-14">
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-2">
-            <Link href={localizedPath(locale, "/")} className="text-xl font-black tracking-tight text-white">POERATOR<span className="text-waveform-cyan">.</span></Link>
+            <Link href={localizedPath(locale, "/")} aria-label="Poerator" className="inline-flex items-center">
+              <Image
+                src="/logo-white.png"
+                alt="Poerator"
+                width={1600}
+                height={423}
+                className="h-7 w-auto"
+              />
+            </Link>
             <p className="mt-4 max-w-sm text-sm leading-6 text-surface-muted">{t("description")}</p>
           </div>
           <div>
