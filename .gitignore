@@ -1,0 +1,11 @@
+node_modules
+.next
+.netlify
+.env*
+!.env.example
+RECOVERY_BRIEF.md
+briefs/
+logos/
+coverage
+*.log
+.DS_Store

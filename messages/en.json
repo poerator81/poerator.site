@@ -1,0 +1,158 @@
+{
+  "nav": {
+    "services": "Services",
+    "equipment": "Equipment",
+    "obVan": "OB Van",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "requestQuote": "Request Quote",
+    "language": "Select language",
+    "menu": "Menu",
+    "closeMenu": "Close menu"
+  },
+  "home": {
+    "eyebrow": "LIVE PRODUCTION · OB VAN · EQUIPMENT RENTAL",
+    "title": "Broadcast-grade live production and video production, anywhere in Europe",
+    "intro": "OB Van hire, live broadcast production and equipment rental across Vilnius, Riga, Tallinn, Warsaw, Berlin, Paris, Belgrade and Brussels.",
+    "getQuote": "Get a Quote",
+    "trustedBy": { "heading": "Trusted by" },
+    "metrics": {
+      "broadcasts": "LIVE BROADCASTS DELIVERED",
+      "years": "YEARS ON THE MARKET",
+      "cities": "CITIES COVERED",
+      "units": "UNITS IN FLEET"
+    },
+    "servicesEyebrow": "01 / Services",
+    "servicesTitle": "What we do",
+    "coverageEyebrow": "02 / Coverage",
+    "coverageTitle": "Our hubs across Europe",
+    "workEyebrow": "03 / Selected work",
+    "workTitle": "Selected work",
+    "differenceEyebrow": "04 / The difference",
+    "differenceTitle": "Built for the moments that cannot be repeated.",
+    "services": {
+      "liveProduction": { "title": "Live Production", "description": "End-to-end broadcast production for sport, culture and corporate events." },
+      "obVanHire": { "title": "OB Van Hire", "description": "Broadcast-ready mobile production units, crewed or dry hire, wherever you need them." },
+      "equipmentRental": { "title": "Equipment Rental", "description": "A dependable fleet of cameras, lenses, audio and transmission equipment." },
+      "videoProduction": { "title": "Video Production", "description": "Commercials, brand films, and documentaries — from concept to final delivery." },
+      "motionGraphics": { "title": "Motion Graphics", "description": "Broadcast-ready graphics that carry your brand from the opening title to the final stat overlay." },
+      "learnMore": "Learn more"
+    },
+    "difference": {
+      "international": { "title": "International experience", "text": "Broadcast teams trusted across major tournaments and live events." },
+      "reliability": { "title": "Reliability, 24/7", "text": "Resilient workflows, tested equipment and people who stay close to the signal." },
+      "crew": { "title": "Crew plus equipment", "text": "A single partner for production expertise, engineering and a complete fleet." },
+      "ready": { "title": "Ready when you are", "text": "Fast mobilization from hubs across Europe, with practical local support." }
+    }
+  },
+  "common": {
+    "cities": "Cities",
+    "contact": "Contact",
+    "navigation": "Navigation",
+    "all": "All",
+    "search": "Search equipment",
+    "city": "City",
+    "category": "Category",
+    "allCities": "All cities",
+    "allCategories": "All categories",
+    "availableIn": "Available in",
+    "quantity": "Available units",
+    "hireTypes": "Hire types",
+    "kitIncludes": "Kit includes",
+    "specifications": "Specifications",
+    "requestQuote": "Request a quote",
+    "backTo": "Back to",
+    "viewAll": "View all",
+    "noResults": "No equipment matches your filters.",
+    "dryHire": "Dry hire",
+    "crewed": "Crewed"
+  },
+  "servicesPage": {
+    "title": "Services",
+    "intro": "Live production, broadcast infrastructure and video production delivered by experienced teams across Europe."
+  },
+  "equipmentPage": {
+    "title": "Broadcast equipment rental",
+    "intro": "Professional cameras, lenses, audio, lighting and broadcast equipment available across Europe.",
+    "details": "View equipment"
+  },
+  "obVan": {
+    "title": "OB Van hire",
+    "intro": "A broadcast-ready mobile production unit for live events, sports and ambitious productions across Europe.",
+    "cameraChannels": "Up to {count} camera channels",
+    "hireTerms": "Hire terms",
+    "consoleSpecs": "Video & control",
+    "audioSpecs": "Audio",
+    "replaySpecs": "Replay"
+  },
+  "portfolio": {
+    "title": "Selected work",
+    "intro": "A selection of broadcasts, productions and live events delivered across Europe.",
+    "client": "Client",
+    "projectType": "Project type",
+    "watch": "Watch project"
+  },
+  "contact": {
+    "metaTitle": "Contact Us | Poerator",
+    "metaDescription": "Get in touch with Poerator for live broadcast production, OB Van hire, or equipment rental across Europe.",
+    "eyebrow": "Contact / Poerator",
+    "title": "Let's create together",
+    "subtitle": "Tell us about your project — live broadcast, OB Van hire, or equipment rental. We'll get back to you shortly.",
+    "form": {
+      "name": "Name",
+      "nameRequired": "Name is required.",
+      "email": "Email",
+      "emailInvalid": "Enter a valid email.",
+      "phone": "Phone",
+      "phoneOptional": "(optional)",
+      "message": "Message",
+      "messageRequired": "Message is required.",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "thanks": "Thanks! We'll get back to you shortly.",
+      "genericError": "Unable to send message. Please try again."
+    }
+  },
+  "footer": {
+    "description": "Live production infrastructure for ambitious broadcasts across Europe.",
+    "rights": "All rights reserved.",
+    "privacyPolicy": "Privacy Policy"
+  },
+  "cookieBanner": {
+    "message": "We use cookies to understand how visitors use our site and improve it. See our",
+    "policyLinkText": "Privacy Policy",
+    "accept": "Accept",
+    "reject": "Reject"
+  },
+  "privacy": {
+    "metaTitle": "Privacy Policy | Poerator",
+    "metaDescription": "How Poerator collects, uses and protects your personal data.",
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: October 2026",
+    "intro": "Poerator (\"we\", \"us\", \"our\") respects your privacy. This policy explains what personal data we collect, why, and what rights you have.",
+    "controllerHeading": "1. Who we are",
+    "controllerBody": "Poerator is a live broadcast production and equipment rental company based in Vilnius, Lithuania. For any questions about this policy or your data, contact us at hey@poerator.com.",
+    "dataCollectedHeading": "2. What data we collect",
+    "dataCollectedBody": "When you use our contact form or quote request form, we collect the information you provide: name, email address, phone number (optional), delivery city, rental dates, project details and your message. When you browse our site, we automatically collect technical data such as your IP address, browser and device type, and pages visited, via analytics cookies (only with your consent — see section 4).",
+    "purposeHeading": "3. Why we use your data and our legal basis",
+    "purposeBody": "We use your data to respond to inquiries and prepare quotes (necessary to take steps at your request before entering into a contract), to manage bookings and provide our services (performance of a contract), to keep accounting and legal records (legal obligation), and to understand how our site is used and improve it (your consent, via analytics cookies).",
+    "cookiesHeading": "4. Cookies",
+    "cookiesBody": "We use essential cookies required for the site to function (such as remembering your language and cookie choice) and, only with your consent, analytics cookies (Google Analytics 4) that help us understand site usage. You can withdraw your consent at any time by clearing your browser's cookies for this site and revisiting it.",
+    "sharingHeading": "5. Who we share data with",
+    "sharingBody": "We share data with service providers who process it on our behalf: Resend (sends emails triggered by our contact and quote forms), Sanity.io (content management), Netlify (website hosting) and Google Analytics (website analytics, only with your consent). We do not sell your personal data to third parties.",
+    "transfersHeading": "6. International data transfers",
+    "transfersBody": "Some of our service providers (such as Resend and Google) may process data outside the European Economic Area, including in the United States. Where this happens, we rely on appropriate safeguards such as Standard Contractual Clauses.",
+    "retentionHeading": "7. How long we keep your data",
+    "retentionBody": "We keep inquiry and contact data for as long as necessary to respond to you and manage any resulting business relationship, and no longer than 3 years after our last contact, unless a longer period is required by law (for example, accounting records related to a contract).",
+    "rightsHeading": "8. Your rights",
+    "rightsBody": "Under the GDPR, you have the right to access, correct, delete or restrict the use of your personal data, to receive a copy of it in a portable format, to object to our use of it, and to withdraw consent at any time. To exercise any of these rights, email hey@poerator.com. You also have the right to lodge a complaint with the State Data Protection Inspectorate of Lithuania (vdai.lrv.lt).",
+    "securityHeading": "9. How we protect your data",
+    "securityBody": "We use reasonable technical and organizational measures, including encrypted connections (HTTPS) and access controls, to protect your data against unauthorized access, loss or misuse.",
+    "childrenHeading": "10. Children",
+    "childrenBody": "Our services are intended for businesses and professionals. We do not knowingly collect personal data from children.",
+    "changesHeading": "11. Changes to this policy",
+    "changesBody": "We may update this policy from time to time. The \"Last updated\" date at the top shows when it was last revised.",
+    "contactHeading": "12. Contact us",
+    "contactBody": "For any questions about this policy or how we handle your data, email hey@poerator.com."
+  }
+}
