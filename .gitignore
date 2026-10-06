@@ -1,6 +1,8 @@
 node_modules
 .next
 .netlify
+.deno
+deno.lock
 .env*
 !.env.example
 RECOVERY_BRIEF.md
