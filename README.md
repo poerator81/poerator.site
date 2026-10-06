@@ -14,7 +14,7 @@ content comes from Sanity.
 
 The public Sanity read configuration has working defaults for local builds.
 The contact endpoint requires `RESEND_API_KEY` and `MANAGER_EMAIL`; the
-revalidation endpoint requires `REVALIDATE_SECRET`.
+revalidation endpoint requires `SANITY_REVALIDATE_SECRET`.
 
 ## Sanity Studio
 

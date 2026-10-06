@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "sanity:schema": "sanity schema deploy"
+    "sanity:schema": "sanity schemas deploy"
   },
   "dependencies": {
     "@sanity/client": "^7.27.0",

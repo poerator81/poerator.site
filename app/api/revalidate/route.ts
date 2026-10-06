@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 
 export async function GET(request: Request) {
   const provided = new URL(request.url).searchParams.get("secret") || "";
-  const expected = process.env.REVALIDATE_SECRET || "";
+  const expected = process.env.SANITY_REVALIDATE_SECRET || "";
   const authorized = provided.length > 0 && expected.length > 0 &&
     Buffer.byteLength(provided) === Buffer.byteLength(expected) &&
     timingSafeEqual(Buffer.from(provided), Buffer.from(expected));
