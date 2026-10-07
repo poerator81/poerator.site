@@ -65,9 +65,17 @@ textarea {
   animation: trusted-marquee-scroll 32s linear infinite;
 }
 
+.trusted-marquee:hover .trusted-marquee-track {
+  animation-play-state: paused;
+}
+
 @keyframes trusted-marquee-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -82,6 +90,15 @@ textarea {
     animation: none;
     flex-wrap: wrap;
     justify-content: center;
+    width: 100%;
+  }
+  .trusted-marquee-set {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+  .trusted-marquee-set[aria-hidden="true"] {
+    display: none;
   }
   .trusted-marquee { overflow: visible; }
 }
