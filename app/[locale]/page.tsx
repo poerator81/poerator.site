@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { SelectedWork } from "@/components/home/SelectedWork";
 import { HeroVideo } from "@/components/home/HeroVideo";
+import { HubsMap } from "@/components/home/HubsMap";
 import { MetricsBar } from "@/components/home/MetricsBar";
 import { ServicesGrid } from "@/components/home/ServicesGrid";
 import { TrustedBy } from "@/components/home/TrustedBy";
@@ -42,6 +43,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <Container>
         <p className="font-mono text-xs uppercase tracking-widest text-waveform-cyan">{t("coverageEyebrow")}</p>
         <h2 className="mt-3 text-3xl font-bold text-white md:text-5xl">{t("coverageTitle")}</h2>
+        <HubsMap label={t("hubsMapLabel")} />
         <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
           {HUB_CITIES.map((city) => <span key={city} className="border border-surface-border px-5 py-6 font-mono text-xs tracking-widest text-surface-muted">{city.toUpperCase()}</span>)}
         </div>
