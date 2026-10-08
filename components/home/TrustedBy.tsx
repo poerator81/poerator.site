@@ -4,7 +4,7 @@ import { Container } from "@/components/ui/Container";
 import type { Locale } from "@/i18n";
 
 const clients = [
-  { name: "Arena Sport", src: "/logos/arena-sport.webp", width: 140, height: 56 },
+  { name: "Arena Sport", src: "/logos/arena-sport.png", width: 165, height: 56 },
   { name: "ESL FACEIT Group", src: "/logos/efg.jpg", width: 120, height: 56 },
   { name: "EJL", src: "/logos/ejl.webp", width: 56, height: 56 },
   { name: "FIBA", src: "/logos/fiba.png", width: 130, height: 56 },
@@ -28,10 +28,10 @@ export async function TrustedBy({ locale }: { locale: Locale }) {
             <div
               key={String(duplicate)}
               aria-hidden={duplicate || undefined}
-              className="trusted-marquee-set flex shrink-0 items-center gap-16"
+              className="trusted-marquee-set flex shrink-0 items-center"
             >
               {clients.map((client) => (
-                <span key={client.name} className="flex shrink-0 items-center">
+                <span key={client.name} className="flex shrink-0 items-center px-8">
                   <Image
                     src={client.src}
                     alt={duplicate ? "" : client.name}
