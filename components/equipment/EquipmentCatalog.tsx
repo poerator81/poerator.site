@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { Search } from "lucide-react";
+import { FieldList } from "@/components/ui/FieldList";
 import type { Category, Equipment } from "@/lib/content";
 import { localizedPath, type Locale } from "@/i18n";
 
@@ -16,12 +17,13 @@ type Labels = {
   availableIn: string;
 };
 
-export function EquipmentCatalog({ items, categories, locale, labels, detailsLabel }: {
+export function EquipmentCatalog({ items, categories, locale, labels, detailsLabel, hireTerms }: {
   items: Equipment[];
   categories: Category[];
   locale: Locale;
   labels: Labels;
   detailsLabel: string;
+  hireTerms: { title: string; fields: [string, string][]; quoteText: string };
 }) {
   const [query, setQuery] = useState("");
   const [city, setCity] = useState("");
@@ -47,6 +49,15 @@ export function EquipmentCatalog({ items, categories, locale, labels, detailsLab
         <option value="">{labels.allCategories}</option>{categories.map((item) => <option key={item._id} value={item.slug}>{item.title[locale] || item.title.en}</option>)}
       </select></label>
     </div>
+    <section className="mt-8 grid gap-6 border border-surface-border bg-legal-black-panel p-6 md:grid-cols-[1fr_auto] md:items-center">
+      <div>
+        <h2 className="text-xl font-semibold text-white">{hireTerms.title}</h2>
+        <div className="mt-4"><FieldList fields={hireTerms.fields} /></div>
+      </div>
+      <Link href={localizedPath(locale, "/contact")} className="inline-flex w-fit bg-waveform-cyan px-5 py-4 font-mono text-xs font-bold uppercase tracking-wider text-legal-black">
+        {hireTerms.quoteText}
+      </Link>
+    </section>
     {filtered.length ? <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {filtered.map((item) => <Link key={item._id} href={localizedPath(locale, `/equipment/${item.category?.slug || "equipment"}/${item.slug}`)} className="group flex min-h-56 flex-col justify-between border border-surface-border bg-legal-black-panel p-6 transition hover:border-waveform-cyan/60">
         <div>

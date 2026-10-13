@@ -9,7 +9,7 @@ const services = [
   { key: "liveProduction", href: "/services", Icon: Radio },
   { key: "obVanHire", href: "/ob-van", Icon: Truck },
   { key: "equipmentRental", href: "/equipment", Icon: Camera },
-  { key: "videoProduction", href: "/services#video-production", Icon: Clapperboard },
+  { key: "videoProduction", href: "/video-production", Icon: Clapperboard },
   { key: "motionGraphics", href: "/services#motion-graphics", Icon: Sparkles },
 ] as const;
 

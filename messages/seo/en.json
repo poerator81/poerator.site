@@ -1,0 +1,94 @@
+{
+  "seoObVan": {
+    "seo": {
+      "title": "Outside Broadcast Van Hire | 12-Camera OB Van",
+      "description": "Outside broadcast van hire: 12 cameras, remote camera control, slow-motion replay, Starlink. Full crew or dry hire. EU delivery. Request a quote."
+    },
+    "title": "Outside broadcast van hire",
+    "sections": {
+      "hireTerms": "Hire terms",
+      "truckSpecs": "Truck specs",
+      "cameraChannels": "Camera channels",
+      "audioComms": "Audio and comms",
+      "replay": "Replay",
+      "crew": "Crew",
+      "transmission": "Transmission",
+      "coverage": "Coverage area",
+      "leadTimes": "Lead times",
+      "requestQuote": "Request a quote"
+    },
+    "fields": {
+      "unit": { "label": "Unit", "value": "12-camera mobile production unit" },
+      "hireTypes": { "label": "Hire types", "value": "full crew, dry hire" },
+      "delivery": { "label": "Delivery", "value": "EU-wide" },
+      "setup": { "label": "Setup on location", "value": "from 3 hours" },
+      "truckUnit": { "label": "Unit", "value": "Poerator OB Van" },
+      "truckType": { "label": "Type", "value": "mobile production unit" },
+      "cameraChannels": { "label": "Camera channels", "value": "up to 12" },
+      "cameraControl": { "label": "Camera control", "value": "remote, from the truck" },
+      "fiberRun": { "label": "Fiber run", "value": "500 m optical cable" },
+      "connectivity": { "label": "Connectivity", "value": "Starlink, autonomous, no local internet required" },
+      "channels": { "label": "Channels", "value": "up to 12" },
+      "cameras": { "label": "Cameras", "value": "Blackmagic URSA Broadcast G2" },
+      "lenses": { "label": "Lenses", "value": "Fujinon" },
+      "intercom": { "label": "Intercom", "value": "crew intercom system" },
+      "replaySystem": { "label": "Replay system", "value": "slow motion replay" },
+      "fullCrew": { "label": "Full crew", "value": "crew included in hire" },
+      "dryHire": { "label": "Dry hire", "value": "unit without crew" },
+      "crewIntercom": { "label": "Crew intercom", "value": "included" },
+      "localInternet": { "label": "Local internet", "value": "not required" },
+      "hubs": { "label": "Hubs", "value": "Vilnius, Riga, Tallinn, Warsaw, Berlin, Paris, Belgrade, London, Brussels" }
+    }
+  },
+  "equipmentHire": {
+    "seo": {
+      "title": "Broadcast Equipment Hire & Rental",
+      "description": "Broadcast equipment hire and rental: cameras, lenses, audio, lighting, vision mixers. Dry hire or full crew. Hubs in 9 European cities. Request a quote."
+    },
+    "terms": {
+      "title": "Hire terms",
+      "hireTypes": { "label": "Hire types", "value": "dry hire, full crew" },
+      "dryHire": { "label": "Dry hire", "value": "equipment only" },
+      "fullCrew": { "label": "Full crew", "value": "equipment with operators" },
+      "delivery": { "label": "Delivery", "value": "EU-wide" },
+      "hubs": { "label": "Hubs", "value": "Vilnius, Riga, Tallinn, Warsaw, Berlin, Paris, Belgrade, London, Brussels" },
+      "requestQuote": "Request a quote"
+    }
+  },
+  "videoProduction": {
+    "seo": {
+      "title": "Video Production Company | Brand Films",
+      "description": "Video production company: commercials, brand films, documentaries. Concept to final delivery. Hubs in 9 European cities. Request a quote."
+    },
+    "title": "Video production company",
+    "company": { "label": "Company", "value": "Poerator" },
+    "services": { "label": "Services", "value": "commercials, brand films, documentaries" },
+    "scope": { "label": "Scope", "value": "concept to final delivery" },
+    "sections": {
+      "services": "Services",
+      "productionScope": "Production scope",
+      "equipment": "Equipment",
+      "selectedProjects": "Selected projects",
+      "coverage": "Coverage area",
+      "requestQuote": "Request a quote"
+    },
+    "serviceItems": ["Commercials", "Brand films", "Documentaries", "Teaser trailers", "YouTube guides"],
+    "production": {
+      "scope": { "label": "Scope", "value": "concept to final delivery" },
+      "cycle": { "label": "Production cycle", "value": "full cycle" },
+      "motionGraphics": { "label": "Motion graphics", "value": "broadcast graphics, AR graphics" }
+    },
+    "equipment": {
+      "cameras": { "label": "Cameras", "value": "Blackmagic URSA Broadcast G2" },
+      "lenses": { "label": "Lenses", "value": "Fujinon" },
+      "source": { "label": "Source", "value": "Poerator hire fleet" },
+      "browse": "Browse equipment"
+    },
+    "projects": {
+      "gurtam": { "name": "GURTAM", "description": "commercial, full production service" },
+      "xmTextiles": { "name": "XM Textiles", "description": "commercial video, YouTube guides" },
+      "nestedLands": { "name": "Nested Lands", "description": "TV show teaser trailer, full cycle" }
+    },
+    "coverage": { "label": "Hubs", "value": "Vilnius, Riga, Tallinn, Warsaw, Berlin, Paris, Belgrade, London, Brussels" }
+  }
+}

@@ -10,7 +10,7 @@ export async function GET(request: Request) {
     timingSafeEqual(Buffer.from(provided), Buffer.from(expected));
   if (!authorized) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-  for (const path of ["/", "/services", "/equipment", "/ob-van", "/portfolio", "/contact"]) revalidatePath(path);
+  for (const path of ["/", "/services", "/equipment", "/ob-van", "/video-production", "/portfolio", "/contact"]) revalidatePath(path);
   revalidatePath("/", "layout");
   return NextResponse.json({ revalidated: true });
 }

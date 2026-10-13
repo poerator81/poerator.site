@@ -1,0 +1,94 @@
+{
+  "seoObVan": {
+    "seo": {
+      "title": "Location car régie | OB Van 12 caméras",
+      "description": "Location de car régie : 12 caméras, contrôle à distance, ralenti, Starlink. Avec équipe ou en location sèche. Livraison dans l’UE. Demander un devis."
+    },
+    "title": "Location de car régie",
+    "sections": {
+      "hireTerms": "Conditions de location",
+      "truckSpecs": "Caractéristiques du car",
+      "cameraChannels": "Voies caméra",
+      "audioComms": "Audio et communication",
+      "replay": "Ralentis",
+      "crew": "Équipe",
+      "transmission": "Transmission",
+      "coverage": "Zone de couverture",
+      "leadTimes": "Délais d’installation",
+      "requestQuote": "Demander un devis"
+    },
+    "fields": {
+      "unit": { "label": "Unité", "value": "Unité mobile de production à 12 caméras" },
+      "hireTypes": { "label": "Formules", "value": "avec équipe, location sèche" },
+      "delivery": { "label": "Livraison", "value": "dans toute l’UE" },
+      "setup": { "label": "Installation sur site", "value": "à partir de 3 heures" },
+      "truckUnit": { "label": "Unité", "value": "Car régie Poerator" },
+      "truckType": { "label": "Type", "value": "unité mobile de production" },
+      "cameraChannels": { "label": "Voies caméra", "value": "jusqu’à 12" },
+      "cameraControl": { "label": "Contrôle caméra", "value": "à distance, depuis le car" },
+      "fiberRun": { "label": "Liaison fibre", "value": "câble optique de 500 m" },
+      "connectivity": { "label": "Connectivité", "value": "Starlink autonome, sans connexion Internet locale requise" },
+      "channels": { "label": "Canaux", "value": "jusqu’à 12" },
+      "cameras": { "label": "Caméras", "value": "Blackmagic URSA Broadcast G2" },
+      "lenses": { "label": "Objectifs", "value": "Fujinon" },
+      "intercom": { "label": "Intercom", "value": "système intercom pour l’équipe" },
+      "replaySystem": { "label": "Système de replay", "value": "replay au ralenti" },
+      "fullCrew": { "label": "Avec équipe", "value": "équipe incluse dans la location" },
+      "dryHire": { "label": "Location sèche", "value": "unité sans équipe" },
+      "crewIntercom": { "label": "Intercom équipe", "value": "inclus" },
+      "localInternet": { "label": "Internet local", "value": "non requis" },
+      "hubs": { "label": "Hubs", "value": "Vilnius, Riga, Tallinn, Warsaw, Berlin, Paris, Belgrade, London, Brussels" }
+    }
+  },
+  "equipmentHire": {
+    "seo": {
+      "title": "Location matériel audiovisuel",
+      "description": "Location de matériel audiovisuel : caméras, objectifs, audio, éclairage, mélangeurs vidéo. Location sèche ou avec équipe. 9 hubs européens. Devis."
+    },
+    "terms": {
+      "title": "Conditions de location",
+      "hireTypes": { "label": "Formules", "value": "location sèche, avec équipe" },
+      "dryHire": { "label": "Location sèche", "value": "matériel seul" },
+      "fullCrew": { "label": "Avec équipe", "value": "matériel avec opérateurs" },
+      "delivery": { "label": "Livraison", "value": "dans toute l’UE" },
+      "hubs": { "label": "Hubs", "value": "Vilnius, Riga, Tallinn, Warsaw, Berlin, Paris, Belgrade, London, Brussels" },
+      "requestQuote": "Demander un devis"
+    }
+  },
+  "videoProduction": {
+    "seo": {
+      "title": "Production vidéo | Films de marque",
+      "description": "Production vidéo : publicités, films de marque, documentaires. Du concept à la livraison finale. 9 hubs européens. Demander un devis."
+    },
+    "title": "Société de production vidéo",
+    "company": { "label": "Société", "value": "Poerator" },
+    "services": { "label": "Services", "value": "publicités, films de marque, documentaires" },
+    "scope": { "label": "Périmètre", "value": "du concept à la livraison finale" },
+    "sections": {
+      "services": "Services",
+      "productionScope": "Périmètre de production",
+      "equipment": "Équipement",
+      "selectedProjects": "Projets sélectionnés",
+      "coverage": "Zone de couverture",
+      "requestQuote": "Demander un devis"
+    },
+    "serviceItems": ["Publicités", "Films de marque", "Documentaires", "Bandes-annonces", "Guides YouTube"],
+    "production": {
+      "scope": { "label": "Périmètre", "value": "du concept à la livraison finale" },
+      "cycle": { "label": "Cycle de production", "value": "cycle complet" },
+      "motionGraphics": { "label": "Motion design", "value": "habillage broadcast, graphismes AR" }
+    },
+    "equipment": {
+      "cameras": { "label": "Caméras", "value": "Blackmagic URSA Broadcast G2" },
+      "lenses": { "label": "Objectifs", "value": "Fujinon" },
+      "source": { "label": "Source", "value": "parc de location Poerator" },
+      "browse": "Voir le matériel"
+    },
+    "projects": {
+      "gurtam": { "name": "GURTAM", "description": "publicité, service de production complet" },
+      "xmTextiles": { "name": "XM Textiles", "description": "vidéo publicitaire, guides YouTube" },
+      "nestedLands": { "name": "Nested Lands", "description": "bande-annonce de série, cycle complet" }
+    },
+    "coverage": { "label": "Hubs", "value": "Vilnius, Riga, Tallinn, Warsaw, Berlin, Paris, Belgrade, London, Brussels" }
+  }
+}

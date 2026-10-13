@@ -1,0 +1,94 @@
+{
+  "seoObVan": {
+    "seo": {
+      "title": "Wynajem wozu transmisyjnego | 12 kamer",
+      "description": "Wynajem wozu transmisyjnego: 12 kamer, zdalne sterowanie, powtórki w zwolnionym tempie, Starlink. Z obsługą lub bez. Dostawa w UE. Poproś o wycenę."
+    },
+    "title": "Wynajem wozu transmisyjnego",
+    "sections": {
+      "hireTerms": "Warunki wynajmu",
+      "truckSpecs": "Specyfikacja wozu",
+      "cameraChannels": "Kanały kamerowe",
+      "audioComms": "Audio i łączność",
+      "replay": "Powtórki",
+      "crew": "Obsługa",
+      "transmission": "Transmisja",
+      "coverage": "Obszar działania",
+      "leadTimes": "Czas przygotowania",
+      "requestQuote": "Poproś o wycenę"
+    },
+    "fields": {
+      "unit": { "label": "Jednostka", "value": "Mobilna jednostka produkcyjna z 12 kamerami" },
+      "hireTypes": { "label": "Opcje wynajmu", "value": "z pełną obsługą, bez obsługi" },
+      "delivery": { "label": "Dostawa", "value": "na terenie UE" },
+      "setup": { "label": "Przygotowanie na miejscu", "value": "od 3 godzin" },
+      "truckUnit": { "label": "Jednostka", "value": "Wóz transmisyjny Poerator" },
+      "truckType": { "label": "Typ", "value": "mobilna jednostka produkcyjna" },
+      "cameraChannels": { "label": "Kanały kamerowe", "value": "do 12" },
+      "cameraControl": { "label": "Sterowanie kamerami", "value": "zdalne, z wozu" },
+      "fiberRun": { "label": "Światłowód", "value": "kabel optyczny 500 m" },
+      "connectivity": { "label": "Łączność", "value": "Starlink, system autonomiczny, bez lokalnego internetu" },
+      "channels": { "label": "Kanały", "value": "do 12" },
+      "cameras": { "label": "Kamery", "value": "Blackmagic URSA Broadcast G2" },
+      "lenses": { "label": "Obiektywy", "value": "Fujinon" },
+      "intercom": { "label": "Interkom", "value": "system interkomowy dla ekipy" },
+      "replaySystem": { "label": "System powtórek", "value": "powtórki w zwolnionym tempie" },
+      "fullCrew": { "label": "Pełna obsługa", "value": "ekipa w cenie wynajmu" },
+      "dryHire": { "label": "Wynajem bez obsługi", "value": "jednostka bez ekipy" },
+      "crewIntercom": { "label": "Interkom ekipy", "value": "w zestawie" },
+      "localInternet": { "label": "Internet lokalny", "value": "niewymagany" },
+      "hubs": { "label": "Bazy", "value": "Vilnius, Riga, Tallinn, Warsaw, Berlin, Paris, Belgrade, London, Brussels" }
+    }
+  },
+  "equipmentHire": {
+    "seo": {
+      "title": "Wynajem sprzętu transmisyjnego",
+      "description": "Wynajem sprzętu transmisyjnego: kamery, obiektywy, audio, oświetlenie, miksery wizyjne. Bez obsługi lub z ekipą. Bazy w 9 miastach Europy. Poproś o wycenę."
+    },
+    "terms": {
+      "title": "Warunki wynajmu",
+      "hireTypes": { "label": "Opcje wynajmu", "value": "bez obsługi, z pełną obsługą" },
+      "dryHire": { "label": "Bez obsługi", "value": "sam sprzęt" },
+      "fullCrew": { "label": "Pełna obsługa", "value": "sprzęt z operatorami" },
+      "delivery": { "label": "Dostawa", "value": "na terenie UE" },
+      "hubs": { "label": "Bazy", "value": "Vilnius, Riga, Tallinn, Warsaw, Berlin, Paris, Belgrade, London, Brussels" },
+      "requestQuote": "Poproś o wycenę"
+    }
+  },
+  "videoProduction": {
+    "seo": {
+      "title": "Produkcja wideo | Filmy wizerunkowe",
+      "description": "Produkcja wideo: reklamy, filmy wizerunkowe, dokumenty. Od koncepcji do finalnej wersji. Bazy w 9 miastach Europy. Poproś o wycenę."
+    },
+    "title": "Firma zajmująca się produkcją wideo",
+    "company": { "label": "Firma", "value": "Poerator" },
+    "services": { "label": "Usługi", "value": "reklamy, filmy wizerunkowe, dokumenty" },
+    "scope": { "label": "Zakres", "value": "od koncepcji do finalnej wersji" },
+    "sections": {
+      "services": "Usługi",
+      "productionScope": "Zakres produkcji",
+      "equipment": "Sprzęt",
+      "selectedProjects": "Wybrane projekty",
+      "coverage": "Obszar działania",
+      "requestQuote": "Poproś o wycenę"
+    },
+    "serviceItems": ["Reklamy", "Filmy wizerunkowe", "Filmy dokumentalne", "Zwiastuny", "Poradniki YouTube"],
+    "production": {
+      "scope": { "label": "Zakres", "value": "od koncepcji do finalnej wersji" },
+      "cycle": { "label": "Cykl produkcyjny", "value": "pełny cykl" },
+      "motionGraphics": { "label": "Grafika ruchoma", "value": "grafika transmisyjna, grafika AR" }
+    },
+    "equipment": {
+      "cameras": { "label": "Kamery", "value": "Blackmagic URSA Broadcast G2" },
+      "lenses": { "label": "Obiektywy", "value": "Fujinon" },
+      "source": { "label": "Źródło", "value": "sprzęt z parku Poerator" },
+      "browse": "Zobacz sprzęt"
+    },
+    "projects": {
+      "gurtam": { "name": "GURTAM", "description": "reklama, kompleksowa realizacja produkcji" },
+      "xmTextiles": { "name": "XM Textiles", "description": "film reklamowy, poradniki YouTube" },
+      "nestedLands": { "name": "Nested Lands", "description": "zwiastun programu TV, pełny cykl" }
+    },
+    "coverage": { "label": "Bazy", "value": "Vilnius, Riga, Tallinn, Warsaw, Berlin, Paris, Belgrade, London, Brussels" }
+  }
+}

@@ -8,6 +8,7 @@ const BASE = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://poerator.com").replac
 const STATIC_PATHS = [
   "",
   "/services",
+  "/video-production",
   "/equipment",
   "/ob-van",
   "/portfolio",
@@ -34,7 +35,7 @@ async function getSlugs(): Promise<Slugs> {
       "cases": *[_type == "caseStudy" && defined(slug.current)]{
         "slug": slug.current, "updated": _updatedAt
       },
-      "geo": *[_type == "geoLanding" && defined(slug.current)]{
+      "geo": *[_type == "geoLanding" && defined(slug.current) && slug.current != "ob-van-rental-berlin"]{
         "slug": slug.current, "updated": _updatedAt
       }
     }`,

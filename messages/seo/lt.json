@@ -1,0 +1,94 @@
+{
+  "seoObVan": {
+    "seo": {
+      "title": "OB transliacijų furgono nuoma | 12 kamerų",
+      "description": "Transliacijų furgono nuoma: 12 kamerų, nuotolinis valdymas, lėto vaizdo pakartojimai, Starlink. Su komanda arba be jos. Pristatymas ES. Prašyti pasiūlymo."
+    },
+    "title": "OB transliacijų furgono nuoma",
+    "sections": {
+      "hireTerms": "Nuomos sąlygos",
+      "truckSpecs": "Furgono specifikacijos",
+      "cameraChannels": "Kamerų kanalai",
+      "audioComms": "Garso ir ryšio įranga",
+      "replay": "Pakartojimai",
+      "crew": "Komanda",
+      "transmission": "Transliacija",
+      "coverage": "Aptarnavimo teritorija",
+      "leadTimes": "Paruošimo laikas",
+      "requestQuote": "Prašyti pasiūlymo"
+    },
+    "fields": {
+      "unit": { "label": "Vienetas", "value": "Mobilus gamybos vienetas su 12 kamerų" },
+      "hireTypes": { "label": "Nuomos tipai", "value": "su visa komanda, be komandos" },
+      "delivery": { "label": "Pristatymas", "value": "visoje ES" },
+      "setup": { "label": "Paruošimas vietoje", "value": "nuo 3 valandų" },
+      "truckUnit": { "label": "Vienetas", "value": "Poerator OB furgonas" },
+      "truckType": { "label": "Tipas", "value": "mobilus gamybos vienetas" },
+      "cameraChannels": { "label": "Kamerų kanalai", "value": "iki 12" },
+      "cameraControl": { "label": "Kamerų valdymas", "value": "nuotolinis, iš furgono" },
+      "fiberRun": { "label": "Šviesolaidis", "value": "500 m optinis kabelis" },
+      "connectivity": { "label": "Ryšys", "value": "autonominis Starlink, vietinis internetas nereikalingas" },
+      "channels": { "label": "Kanalai", "value": "iki 12" },
+      "cameras": { "label": "Kameros", "value": "Blackmagic URSA Broadcast G2" },
+      "lenses": { "label": "Objektyvai", "value": "Fujinon" },
+      "intercom": { "label": "Interkomas", "value": "komandos interkomo sistema" },
+      "replaySystem": { "label": "Pakartojimų sistema", "value": "sulėtinto vaizdo pakartojimai" },
+      "fullCrew": { "label": "Visa komanda", "value": "komanda įskaičiuota į nuomą" },
+      "dryHire": { "label": "Nuoma be komandos", "value": "vienetas be komandos" },
+      "crewIntercom": { "label": "Komandos interkomas", "value": "įtrauktas" },
+      "localInternet": { "label": "Vietinis internetas", "value": "nereikalingas" },
+      "hubs": { "label": "Centrai", "value": "Vilnius, Riga, Tallinn, Warsaw, Berlin, Paris, Belgrade, London, Brussels" }
+    }
+  },
+  "equipmentHire": {
+    "seo": {
+      "title": "Transliacijų įrangos nuoma",
+      "description": "Transliacijų įrangos nuoma: kameros, objektyvai, garsas, šviesa, vaizdo mikšeriai. Tik įranga arba su komanda. Centrai 9 Europos miestuose. Pasiūlymas."
+    },
+    "terms": {
+      "title": "Nuomos sąlygos",
+      "hireTypes": { "label": "Nuomos tipai", "value": "be komandos, su visa komanda" },
+      "dryHire": { "label": "Nuoma be komandos", "value": "tik įranga" },
+      "fullCrew": { "label": "Visa komanda", "value": "įranga su operatoriais" },
+      "delivery": { "label": "Pristatymas", "value": "visoje ES" },
+      "hubs": { "label": "Centrai", "value": "Vilnius, Riga, Tallinn, Warsaw, Berlin, Paris, Belgrade, London, Brussels" },
+      "requestQuote": "Prašyti pasiūlymo"
+    }
+  },
+  "videoProduction": {
+    "seo": {
+      "title": "Vaizdo įrašų gamyba | Prekės ženklo filmai",
+      "description": "Vaizdo įrašų gamyba: reklamos, prekės ženklo filmai, dokumentika. Nuo idėjos iki galutinio rezultato. Centrai 9 Europos miestuose. Prašyti pasiūlymo."
+    },
+    "title": "Vaizdo įrašų gamybos įmonė",
+    "company": { "label": "Įmonė", "value": "Poerator" },
+    "services": { "label": "Paslaugos", "value": "reklamos, prekės ženklo filmai, dokumentika" },
+    "scope": { "label": "Apimtis", "value": "nuo idėjos iki galutinio rezultato" },
+    "sections": {
+      "services": "Paslaugos",
+      "productionScope": "Gamybos apimtis",
+      "equipment": "Įranga",
+      "selectedProjects": "Atrinkti projektai",
+      "coverage": "Aptarnavimo teritorija",
+      "requestQuote": "Prašyti pasiūlymo"
+    },
+    "serviceItems": ["Reklamos", "Prekės ženklo filmai", "Dokumentika", "Anonsai", "YouTube instrukcijos"],
+    "production": {
+      "scope": { "label": "Apimtis", "value": "nuo idėjos iki galutinio rezultato" },
+      "cycle": { "label": "Gamybos ciklas", "value": "visas ciklas" },
+      "motionGraphics": { "label": "Animuota grafika", "value": "transliacijų grafika, AR grafika" }
+    },
+    "equipment": {
+      "cameras": { "label": "Kameros", "value": "Blackmagic URSA Broadcast G2" },
+      "lenses": { "label": "Objektyvai", "value": "Fujinon" },
+      "source": { "label": "Šaltinis", "value": "Poerator nuomos parkas" },
+      "browse": "Peržiūrėti įrangą"
+    },
+    "projects": {
+      "gurtam": { "name": "GURTAM", "description": "reklama, visos gamybos paslaugos" },
+      "xmTextiles": { "name": "XM Textiles", "description": "reklaminis vaizdo įrašas, YouTube instrukcijos" },
+      "nestedLands": { "name": "Nested Lands", "description": "TV laidos anonsas, visas ciklas" }
+    },
+    "coverage": { "label": "Centrai", "value": "Vilnius, Riga, Tallinn, Warsaw, Berlin, Paris, Belgrade, London, Brussels" }
+  }
+}

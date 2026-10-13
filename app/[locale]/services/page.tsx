@@ -5,12 +5,17 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
+import { pageAlternates } from "@/lib/seo";
 import { localizedPath, locales, type Locale } from "@/i18n";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "servicesPage" });
-  return { title: t("title"), description: t("intro") };
+  return {
+    title: t("title"),
+    description: t("intro"),
+    alternates: pageAlternates(locale as Locale, "/services"),
+  };
 }
 
 export default async function ServicesPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -24,7 +29,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
     { key: "liveProduction", href: "/contact", Icon: Radio, id: "live-production" },
     { key: "obVanHire", href: "/ob-van", Icon: Truck, id: "ob-van-hire" },
     { key: "equipmentRental", href: "/equipment", Icon: Camera, id: "equipment-rental" },
-    { key: "videoProduction", href: "/contact", Icon: Clapperboard, id: "video-production" },
+    { key: "videoProduction", href: "/video-production", Icon: Clapperboard, id: "video-production" },
     { key: "motionGraphics", href: "/contact", Icon: Sparkles, id: "motion-graphics" },
   ] as const;
   return <Section><Container>

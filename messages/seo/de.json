@@ -1,0 +1,94 @@
+{
+  "seoObVan": {
+    "seo": {
+      "title": "Mietbarer Ü-Wagen | 12-Kamera-OB-Van",
+      "description": "Mietbarer Ü-Wagen: 12 Kameras, Fernsteuerung, Zeitlupenwiedergabe, Starlink. Mit Crew oder Dry Hire. EU-weite Lieferung. Angebot anfordern."
+    },
+    "title": "Mietbarer Übertragungswagen",
+    "sections": {
+      "hireTerms": "Mietbedingungen",
+      "truckSpecs": "Fahrzeugdaten",
+      "cameraChannels": "Kamerakanäle",
+      "audioComms": "Audio und Kommunikation",
+      "replay": "Wiedergabe",
+      "crew": "Crew",
+      "transmission": "Übertragung",
+      "coverage": "Einsatzgebiet",
+      "leadTimes": "Aufbauzeiten",
+      "requestQuote": "Angebot anfordern"
+    },
+    "fields": {
+      "unit": { "label": "Einheit", "value": "Mobile Produktionseinheit mit 12 Kameras" },
+      "hireTypes": { "label": "Mietoptionen", "value": "mit Crew, Dry Hire" },
+      "delivery": { "label": "Lieferung", "value": "EU-weit" },
+      "setup": { "label": "Aufbau vor Ort", "value": "ab 3 Stunden" },
+      "truckUnit": { "label": "Einheit", "value": "Poerator Ü-Wagen" },
+      "truckType": { "label": "Typ", "value": "mobile Produktionseinheit" },
+      "cameraChannels": { "label": "Kamerakanäle", "value": "bis zu 12" },
+      "cameraControl": { "label": "Kamerasteuerung", "value": "ferngesteuert, vom Fahrzeug aus" },
+      "fiberRun": { "label": "Glasfaserleitung", "value": "500 m Glasfaserkabel" },
+      "connectivity": { "label": "Konnektivität", "value": "Starlink, autark, kein lokales Internet erforderlich" },
+      "channels": { "label": "Kanäle", "value": "bis zu 12" },
+      "cameras": { "label": "Kameras", "value": "Blackmagic URSA Broadcast G2" },
+      "lenses": { "label": "Objektive", "value": "Fujinon" },
+      "intercom": { "label": "Intercom", "value": "Intercom-System für die Crew" },
+      "replaySystem": { "label": "Wiedergabesystem", "value": "Zeitlupenwiedergabe" },
+      "fullCrew": { "label": "Mit Crew", "value": "Crew im Mietumfang enthalten" },
+      "dryHire": { "label": "Dry Hire", "value": "Einheit ohne Crew" },
+      "crewIntercom": { "label": "Crew-Intercom", "value": "enthalten" },
+      "localInternet": { "label": "Lokales Internet", "value": "nicht erforderlich" },
+      "hubs": { "label": "Standorte", "value": "Vilnius, Riga, Tallinn, Warsaw, Berlin, Paris, Belgrade, London, Brussels" }
+    }
+  },
+  "equipmentHire": {
+    "seo": {
+      "title": "Broadcast-Equipment mieten",
+      "description": "Broadcast-Equipment mieten: Kameras, Objektive, Audio, Licht, Bildmischer. Dry Hire oder mit Crew. Standorte in 9 europäischen Städten. Angebot anfordern."
+    },
+    "terms": {
+      "title": "Mietbedingungen",
+      "hireTypes": { "label": "Mietoptionen", "value": "Dry Hire, mit Crew" },
+      "dryHire": { "label": "Dry Hire", "value": "nur Ausrüstung" },
+      "fullCrew": { "label": "Mit Crew", "value": "Ausrüstung mit Bedienpersonal" },
+      "delivery": { "label": "Lieferung", "value": "EU-weit" },
+      "hubs": { "label": "Standorte", "value": "Vilnius, Riga, Tallinn, Warsaw, Berlin, Paris, Belgrade, London, Brussels" },
+      "requestQuote": "Angebot anfordern"
+    }
+  },
+  "videoProduction": {
+    "seo": {
+      "title": "Videoproduktion | Markenfilme",
+      "description": "Videoproduktion: Werbespots, Markenfilme, Dokumentarfilme. Vom Konzept bis zur finalen Lieferung. Standorte in 9 europäischen Städten. Angebot anfordern."
+    },
+    "title": "Videoproduktionsunternehmen",
+    "company": { "label": "Unternehmen", "value": "Poerator" },
+    "services": { "label": "Leistungen", "value": "Werbespots, Markenfilme, Dokumentarfilme" },
+    "scope": { "label": "Umfang", "value": "vom Konzept bis zur finalen Lieferung" },
+    "sections": {
+      "services": "Leistungen",
+      "productionScope": "Produktionsumfang",
+      "equipment": "Ausrüstung",
+      "selectedProjects": "Ausgewählte Projekte",
+      "coverage": "Einsatzgebiet",
+      "requestQuote": "Angebot anfordern"
+    },
+    "serviceItems": ["Werbespots", "Markenfilme", "Dokumentarfilme", "Teaser-Trailer", "YouTube-Anleitungen"],
+    "production": {
+      "scope": { "label": "Umfang", "value": "vom Konzept bis zur finalen Lieferung" },
+      "cycle": { "label": "Produktionszyklus", "value": "kompletter Produktionszyklus" },
+      "motionGraphics": { "label": "Motion Graphics", "value": "Broadcast-Grafiken, AR-Grafiken" }
+    },
+    "equipment": {
+      "cameras": { "label": "Kameras", "value": "Blackmagic URSA Broadcast G2" },
+      "lenses": { "label": "Objektive", "value": "Fujinon" },
+      "source": { "label": "Quelle", "value": "Mietpark von Poerator" },
+      "browse": "Ausrüstung ansehen"
+    },
+    "projects": {
+      "gurtam": { "name": "GURTAM", "description": "Werbespot, komplette Produktionsbetreuung" },
+      "xmTextiles": { "name": "XM Textiles", "description": "Werbevideo, YouTube-Anleitungen" },
+      "nestedLands": { "name": "Nested Lands", "description": "Serien-Teaser, kompletter Produktionszyklus" }
+    },
+    "coverage": { "label": "Standorte", "value": "Vilnius, Riga, Tallinn, Warsaw, Berlin, Paris, Belgrade, London, Brussels" }
+  }
+}
