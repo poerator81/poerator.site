@@ -29,12 +29,14 @@ export const categoriesQuery = `*[_type == "category"] | order(order asc) {
 
 export const equipmentQuery = `*[_type == "equipment"] | order(name.en asc) {
   _id, name, "slug": slug.current, "category": category->{_id, title, "slug": slug.current},
-  shortDescription, hireTypes, quantityAvailable, availableCities, kitIncludes, specifications, gallery
+  seoName, shortDescription, hireTypes, quantityAvailable, availableCities,
+  dailyRate, deposit, minHirePeriod, insurance, kitIncludes, specifications, gallery
 }`;
 
 export const equipmentBySlugQuery = `*[_type == "equipment" && slug.current == $slug][0] {
   _id, name, "slug": slug.current, "category": category->{_id, title, "slug": slug.current},
-  shortDescription, hireTypes, quantityAvailable, availableCities, kitIncludes, specifications, gallery
+  seoName, shortDescription, hireTypes, quantityAvailable, availableCities,
+  dailyRate, deposit, minHirePeriod, insurance, kitIncludes, specifications, gallery
 }`;
 
 export const casesQuery = `*[_type == "caseStudy"] | order(_createdAt desc) {

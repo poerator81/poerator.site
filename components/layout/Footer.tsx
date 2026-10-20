@@ -10,10 +10,11 @@ export async function Footer({ locale }: { locale: Locale }) {
   const c = await getTranslations({ locale, namespace: "common" });
   const n = await getTranslations({ locale, namespace: "nav" });
   const links = [
-    ["services", "/services"],
-    ["equipment", "/equipment"],
-    ["portfolio", "/portfolio"],
-    ["contact", "/contact"],
+    { href: "/services", label: n("services") },
+    { href: "/video-production", label: "Video production" },
+    { href: "/equipment", label: n("equipment") },
+    { href: "/portfolio", label: n("portfolio") },
+    { href: "/contact", label: n("contact") },
   ] as const;
 
   return (
@@ -34,7 +35,7 @@ export async function Footer({ locale }: { locale: Locale }) {
           </div>
           <div>
             <h2 className="font-mono text-xs uppercase tracking-widest text-surface-muted">{c("navigation")}</h2>
-            <ul className="mt-4 space-y-3">{links.map(([key, href]) => <li key={href}><Link href={localizedPath(locale, href)} className="text-sm text-white hover:text-waveform-cyan">{n(key)}</Link></li>)}</ul>
+            <ul className="mt-4 space-y-3">{links.map(({ href, label }) => <li key={href}><Link href={localizedPath(locale, href)} className="text-sm text-white hover:text-waveform-cyan">{label}</Link></li>)}</ul>
           </div>
           <div>
             <h2 className="font-mono text-xs uppercase tracking-widest text-surface-muted">{c("cities")}</h2>

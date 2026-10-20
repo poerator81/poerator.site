@@ -61,6 +61,7 @@
       "description": "Video production company: commercials, brand films, documentaries. Concept to final delivery. Hubs in 9 European cities. Request a quote."
     },
     "title": "Video production company",
+    "serviceLink": "Service: video production",
     "company": { "label": "Company", "value": "Poerator" },
     "services": { "label": "Services", "value": "commercials, brand films, documentaries" },
     "scope": { "label": "Scope", "value": "concept to final delivery" },
@@ -90,5 +91,18 @@
       "nestedLands": { "name": "Nested Lands", "description": "TV show teaser trailer, full cycle" }
     },
     "coverage": { "label": "Hubs", "value": "Vilnius, Riga, Tallinn, Warsaw, Berlin, Paris, Belgrade, London, Brussels" }
+  },
+  "equipmentCard": {
+    "seoTitle": "{shortName} Hire | 9 Cities",
+    "seoDescription": "{shortName} hire, dry. {type}. {cities}. Request a quote.",
+    "defaultType": "Equipment",
+    "dryHireValue": "Dry hire",
+    "hireTermsTitle": "Hire terms",
+    "delivery": { "label": "Delivery", "value": "EU-wide" },
+    "category": { "label": "Category" },
+    "dailyRate": { "label": "Daily rate" },
+    "deposit": { "label": "Deposit" },
+    "minimumHirePeriod": { "label": "Minimum hire period" },
+    "insurance": { "label": "Insurance" }
   }
 }

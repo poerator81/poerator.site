@@ -61,6 +61,7 @@
       "description": "Produkcja wideo: reklamy, filmy wizerunkowe, dokumenty. Od koncepcji do finalnej wersji. Bazy w 9 miastach Europy. Poproś o wycenę."
     },
     "title": "Firma zajmująca się produkcją wideo",
+    "serviceLink": "Usługa: video production",
     "company": { "label": "Firma", "value": "Poerator" },
     "services": { "label": "Usługi", "value": "reklamy, filmy wizerunkowe, dokumenty" },
     "scope": { "label": "Zakres", "value": "od koncepcji do finalnej wersji" },
@@ -90,5 +91,18 @@
       "nestedLands": { "name": "Nested Lands", "description": "zwiastun programu TV, pełny cykl" }
     },
     "coverage": { "label": "Bazy", "value": "Vilnius, Riga, Tallinn, Warsaw, Berlin, Paris, Belgrade, London, Brussels" }
+  },
+  "equipmentCard": {
+    "seoTitle": "{shortName} wynajem | 9 miast",
+    "seoDescription": "{shortName} wynajem, dry. {type}. {cities}. Poproś o wycenę.",
+    "defaultType": "Sprzęt",
+    "dryHireValue": "Wynajem bez obsługi",
+    "hireTermsTitle": "Warunki wynajmu",
+    "delivery": { "label": "Dostawa", "value": "na terenie UE" },
+    "category": { "label": "Kategoria" },
+    "dailyRate": { "label": "Stawka dzienna" },
+    "deposit": { "label": "Depozyt" },
+    "minimumHirePeriod": { "label": "Minimalny okres wynajmu" },
+    "insurance": { "label": "Ubezpieczenie" }
   }
 }

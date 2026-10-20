@@ -82,3 +82,42 @@ export function collectionPageJsonLd(options: {
     isPartOf: { "@id": ORGANIZATION_ID },
   };
 }
+
+export function equipmentJsonLd(options: {
+  locale: Locale;
+  path: string;
+  name: string;
+  description: string;
+  brand?: string;
+  category: string;
+  image?: string;
+  sku: string;
+  dailyRate?: number;
+}) {
+  const url = absoluteUrl(options.locale, options.path);
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: options.name,
+    description: options.description,
+    sku: options.sku,
+    category: options.category,
+    url,
+    ...(options.brand ? { brand: { "@type": "Brand", name: options.brand } } : {}),
+    ...(options.image ? { image: options.image } : {}),
+    ...(options.dailyRate != null
+      ? {
+          offers: {
+            "@type": "Offer",
+            url,
+            priceCurrency: "EUR",
+            price: options.dailyRate,
+            availability: "https://schema.org/InStock",
+            businessFunction: "http://purl.org/goodrelations/v1#LeaseOut",
+            seller: { "@id": ORGANIZATION_ID },
+            areaServed: CITIES.map((name) => ({ "@type": "City", name })),
+          },
+        }
+      : {}),
+  };
+}

@@ -61,6 +61,7 @@
       "description": "Videoproduktion: Werbespots, Markenfilme, Dokumentarfilme. Vom Konzept bis zur finalen Lieferung. Standorte in 9 europäischen Städten. Angebot anfordern."
     },
     "title": "Videoproduktionsunternehmen",
+    "serviceLink": "Service: Video production",
     "company": { "label": "Unternehmen", "value": "Poerator" },
     "services": { "label": "Leistungen", "value": "Werbespots, Markenfilme, Dokumentarfilme" },
     "scope": { "label": "Umfang", "value": "vom Konzept bis zur finalen Lieferung" },
@@ -90,5 +91,18 @@
       "nestedLands": { "name": "Nested Lands", "description": "Serien-Teaser, kompletter Produktionszyklus" }
     },
     "coverage": { "label": "Standorte", "value": "Vilnius, Riga, Tallinn, Warsaw, Berlin, Paris, Belgrade, London, Brussels" }
+  },
+  "equipmentCard": {
+    "seoTitle": "{shortName} mieten | 9 Städte",
+    "seoDescription": "{shortName} mieten, dry. {type}. {cities}. Angebot anfordern.",
+    "defaultType": "Equipment",
+    "dryHireValue": "Dry hire",
+    "hireTermsTitle": "Mietbedingungen",
+    "delivery": { "label": "Lieferung", "value": "EU-weit" },
+    "category": { "label": "Kategorie" },
+    "dailyRate": { "label": "Tagessatz" },
+    "deposit": { "label": "Kaution" },
+    "minimumHirePeriod": { "label": "Mindestmietdauer" },
+    "insurance": { "label": "Versicherung" }
   }
 }

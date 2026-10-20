@@ -27,11 +27,16 @@ export type Equipment = {
   _id: string;
   name: Record<string, string>;
   slug: string;
+  seoName?: string;
   category?: Category;
   shortDescription?: Record<string, string>;
   hireTypes?: string[];
   quantityAvailable?: number;
   availableCities?: string[];
+  dailyRate?: string;
+  deposit?: string;
+  minHirePeriod?: Record<string, string>;
+  insurance?: Record<string, string>;
   kitIncludes?: Record<string, string>[];
   specifications?: Specification[];
   gallery?: { _key?: string; asset?: { _ref: string } }[];

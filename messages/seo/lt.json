@@ -61,6 +61,7 @@
       "description": "Vaizdo įrašų gamyba: reklamos, prekės ženklo filmai, dokumentika. Nuo idėjos iki galutinio rezultato. Centrai 9 Europos miestuose. Prašyti pasiūlymo."
     },
     "title": "Vaizdo įrašų gamybos įmonė",
+    "serviceLink": "Paslauga: video production",
     "company": { "label": "Įmonė", "value": "Poerator" },
     "services": { "label": "Paslaugos", "value": "reklamos, prekės ženklo filmai, dokumentika" },
     "scope": { "label": "Apimtis", "value": "nuo idėjos iki galutinio rezultato" },
@@ -90,5 +91,18 @@
       "nestedLands": { "name": "Nested Lands", "description": "TV laidos anonsas, visas ciklas" }
     },
     "coverage": { "label": "Centrai", "value": "Vilnius, Riga, Tallinn, Warsaw, Berlin, Paris, Belgrade, London, Brussels" }
+  },
+  "equipmentCard": {
+    "seoTitle": "{shortName} nuoma | 9 miestai",
+    "seoDescription": "{shortName} nuoma, dry. {type}. {cities}. Prašyti pasiūlymo.",
+    "defaultType": "Įranga",
+    "dryHireValue": "Nuoma be komandos",
+    "hireTermsTitle": "Nuomos sąlygos",
+    "delivery": { "label": "Pristatymas", "value": "visoje ES" },
+    "category": { "label": "Kategorija" },
+    "dailyRate": { "label": "Dienos kaina" },
+    "deposit": { "label": "Užstatas" },
+    "minimumHirePeriod": { "label": "Minimalus nuomos laikotarpis" },
+    "insurance": { "label": "Draudimas" }
   }
 }

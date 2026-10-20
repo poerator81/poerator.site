@@ -61,6 +61,7 @@
       "description": "Production vidéo : publicités, films de marque, documentaires. Du concept à la livraison finale. 9 hubs européens. Demander un devis."
     },
     "title": "Société de production vidéo",
+    "serviceLink": "Service : video production",
     "company": { "label": "Société", "value": "Poerator" },
     "services": { "label": "Services", "value": "publicités, films de marque, documentaires" },
     "scope": { "label": "Périmètre", "value": "du concept à la livraison finale" },
@@ -90,5 +91,18 @@
       "nestedLands": { "name": "Nested Lands", "description": "bande-annonce de série, cycle complet" }
     },
     "coverage": { "label": "Hubs", "value": "Vilnius, Riga, Tallinn, Warsaw, Berlin, Paris, Belgrade, London, Brussels" }
+  },
+  "equipmentCard": {
+    "seoTitle": "{shortName} location | 9 villes",
+    "seoDescription": "{shortName} location, dry. {type}. {cities}. Demander un devis.",
+    "defaultType": "Équipement",
+    "dryHireValue": "Location sèche",
+    "hireTermsTitle": "Conditions de location",
+    "delivery": { "label": "Livraison", "value": "dans toute l’UE" },
+    "category": { "label": "Catégorie" },
+    "dailyRate": { "label": "Tarif journalier" },
+    "deposit": { "label": "Caution" },
+    "minimumHirePeriod": { "label": "Durée minimale" },
+    "insurance": { "label": "Assurance" }
   }
 }
