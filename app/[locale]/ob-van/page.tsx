@@ -8,7 +8,7 @@ import { FieldList } from "@/components/ui/FieldList";
 import { Section } from "@/components/ui/Section";
 import { breadcrumbJsonLd, serviceJsonLd } from "@/lib/jsonld";
 import { pageMetadata } from "@/lib/seo";
-import { SEO_LABELS } from "@/lib/seo-copy";
+import { SEO_LABELS, SERVICE_SCHEMA_COPY } from "@/lib/seo-copy";
 import { OB_VAN_EQUIPMENT_LINKS, equipmentHref } from "@/lib/equipment-links";
 import { getEquipment } from "@/lib/content";
 import { localizedPath, locales, type Locale } from "@/i18n";
@@ -46,13 +46,7 @@ export default async function ObVanPage({ params }: { params: Promise<{ locale: 
     { key: "coverage", fields: ["delivery", "hubs"] },
     { key: "leadTimes", fields: ["setup"] },
   ];
-  const service = serviceJsonLd({
-    locale,
-    path: "/ob-van",
-    name: "Outside broadcast van hire",
-    serviceType: "OB van hire",
-    description: "OB van: up to 12 camera channels, Starlink, slow-motion replay. Full crew or dry hire. Delivery EU-wide.",
-  });
+  const service = serviceJsonLd({ locale, path: "/ob-van", ...SERVICE_SCHEMA_COPY[locale].obVan });
   const labels = SEO_LABELS[locale].breadcrumb;
   const breadcrumb = breadcrumbJsonLd(locale, "/ob-van", (path) => {
     if (path === "/") return labels.home;

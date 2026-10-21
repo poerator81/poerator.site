@@ -109,9 +109,9 @@ export default async function EquipmentDetailPage({ params }: { params: Promise<
     <section className="mt-14">
       <h2 className="text-2xl font-semibold text-white">{FLEET_COPY[locale].relatedKit}</h2>
       <ul className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {related.map(({ item: target, anchor }) => <li key={target._id}>
+        {related.map((target) => <li key={target._id}>
           <Link href={localizedPath(locale, `/equipment/${target.category?.slug}/${target.slug}`)} className="block h-full border border-surface-border bg-legal-black-panel p-4 text-sm text-waveform-cyan transition hover:border-waveform-cyan/60 hover:underline">
-            {anchor || localized(target.name, locale) || target.name.en}
+            {target.seoName || target.name.en}
           </Link>
         </li>)}
       </ul>

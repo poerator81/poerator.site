@@ -1,5 +1,37 @@
 import type { Locale } from "@/i18n";
 
+export const SERVICE_SCHEMA_COPY: Record<Locale, {
+  services: { name: string; serviceType: string; description: string };
+  obVan: { name: string; serviceType: string; description: string };
+  videoProduction: { name: string; serviceType: string; description: string };
+}> = {
+  en: {
+    services: { name: "Production services", serviceType: "Live broadcast production", description: "Live production, OB van hire, equipment, video production, motion graphics." },
+    obVan: { name: "Outside broadcast van hire", serviceType: "OB van hire", description: "OB van: up to 12 camera channels, Starlink, slow-motion replay. Full crew or dry hire. Delivery EU-wide." },
+    videoProduction: { name: "Video production", serviceType: "Video production", description: "Commercials, brand films, documentaries. Concept to final delivery." },
+  },
+  de: {
+    services: { name: "Produktionsleistungen", serviceType: "Live-Übertragungsproduktion", description: "Live-Produktion, Übertragungswagen, Ausrüstung, Videoproduktion und Motion Graphics." },
+    obVan: { name: "Vermietung von Übertragungswagen", serviceType: "Übertragungswagen", description: "Übertragungswagen mit bis zu 12 Kamerakanälen, Starlink und Zeitlupenwiedergabe. Mit Crew oder ohne Crew. Lieferung in der EU." },
+    videoProduction: { name: "Videoproduktion", serviceType: "Videoproduktion", description: "Werbespots, Markenfilme und Dokumentarfilme. Vom Konzept bis zur fertigen Produktion." },
+  },
+  fr: {
+    services: { name: "Services de production", serviceType: "Production de retransmissions en direct", description: "Production en direct, car régie, équipement, production vidéo et motion design." },
+    obVan: { name: "Location de car régie", serviceType: "Car régie", description: "Car régie avec jusqu’à 12 voies caméra, Starlink et ralenti. Avec équipe ou sans équipe. Livraison dans l’UE." },
+    videoProduction: { name: "Production vidéo", serviceType: "Production vidéo", description: "Publicités, films de marque et documentaires. Du concept à la livraison finale." },
+  },
+  pl: {
+    services: { name: "Usługi produkcyjne", serviceType: "Produkcja transmisji na żywo", description: "Produkcja na żywo, wozy transmisyjne, sprzęt, produkcja wideo i grafika ruchoma." },
+    obVan: { name: "Wynajem wozu transmisyjnego", serviceType: "Wóz transmisyjny", description: "Wóz transmisyjny z maksymalnie 12 kanałami kamerowymi, Starlinkiem i powtórkami w zwolnionym tempie. Z pełną obsługą lub bez. Dostawa na terenie UE." },
+    videoProduction: { name: "Produkcja wideo", serviceType: "Produkcja wideo", description: "Reklamy, filmy wizerunkowe i dokumentalne. Od koncepcji do finalnego materiału." },
+  },
+  lt: {
+    services: { name: "Gamybos paslaugos", serviceType: "Tiesioginių transliacijų gamyba", description: "Tiesioginė gamyba, OB furgonai, įranga, vaizdo gamyba ir animuota grafika." },
+    obVan: { name: "OB furgono nuoma", serviceType: "OB furgonas", description: "OB furgonas su iki 12 kamerų kanalų, „Starlink“ ir sulėtinto vaizdo pakartojimais. Su komanda arba be jos. Pristatymas ES." },
+    videoProduction: { name: "Vaizdo įrašų gamyba", serviceType: "Vaizdo įrašų gamyba", description: "Reklamos, prekės ženklo filmai ir dokumentiniai filmai. Nuo koncepcijos iki galutinio rezultato." },
+  },
+};
+
 export const SEO_LABELS: Record<Locale, {
   breadcrumb: Record<string, string>;
   relatedServices: string;

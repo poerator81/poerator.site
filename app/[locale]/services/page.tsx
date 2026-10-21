@@ -9,7 +9,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
 import { serviceJsonLd } from "@/lib/jsonld";
 import { pageMetadata } from "@/lib/seo";
-import { SEO_LABELS } from "@/lib/seo-copy";
+import { SEO_LABELS, SERVICE_SCHEMA_COPY } from "@/lib/seo-copy";
 import { FLEET_LINKS, equipmentHref } from "@/lib/equipment-links";
 import { getEquipment } from "@/lib/content";
 import { FLEET_COPY } from "@/lib/capability-groups";
@@ -44,13 +44,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
     if (path === "/services") return labels.services;
     throw new Error(`Unknown services breadcrumb path: ${path}`);
   });
-  const service = serviceJsonLd({
-    locale,
-    path: "/services",
-    name: "Production services",
-    serviceType: "Live broadcast production",
-    description: "Live production, OB van hire, equipment, video production, motion graphics.",
-  });
+  const service = serviceJsonLd({ locale, path: "/services", ...SERVICE_SCHEMA_COPY[locale].services });
   return <Section><Container>
     <JsonLd data={service} />
     <JsonLd data={breadcrumb} />

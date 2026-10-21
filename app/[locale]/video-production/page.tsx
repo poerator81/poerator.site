@@ -8,7 +8,7 @@ import { FieldList } from "@/components/ui/FieldList";
 import { Section } from "@/components/ui/Section";
 import { breadcrumbJsonLd, serviceJsonLd } from "@/lib/jsonld";
 import { pageMetadata } from "@/lib/seo";
-import { SEO_LABELS } from "@/lib/seo-copy";
+import { SEO_LABELS, SERVICE_SCHEMA_COPY } from "@/lib/seo-copy";
 import { VIDEO_EQUIPMENT_LINKS, equipmentHref } from "@/lib/equipment-links";
 import { getEquipment } from "@/lib/content";
 import { FLEET_COPY } from "@/lib/capability-groups";
@@ -36,13 +36,7 @@ export default async function VideoProductionPage({ params }: { params: Promise<
     t(`${prefix}.${key}.label`),
     t(`${prefix}.${key}.value`),
   ] as [string, string]);
-  const service = serviceJsonLd({
-    locale,
-    path: "/video-production",
-    name: "Video production",
-    serviceType: "Video production",
-    description: "Commercials, brand films, documentaries. Concept to final delivery.",
-  });
+  const service = serviceJsonLd({ locale, path: "/video-production", ...SERVICE_SCHEMA_COPY[locale].videoProduction });
   const labels = SEO_LABELS[locale].breadcrumb;
   const breadcrumb = breadcrumbJsonLd(locale, "/video-production", (path) => {
     if (path === "/") return labels.home;
