@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { locales, localizedPath, type Locale } from "@/i18n";
+import { HREFLANG } from "@/lib/seo";
 import { sanityClient } from "@/lib/sanity";
 
 export const revalidate = 3600;
@@ -50,12 +51,16 @@ function entry(
   priority: number,
   changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"],
 ): MetadataRoute.Sitemap {
-  const languages = Object.fromEntries(
+  const translatedUrls = Object.fromEntries(
     locales.map((locale: Locale) => [
-      locale,
+      HREFLANG[locale],
       `${BASE}${localizedPath(locale, path)}`,
     ]),
   );
+  const languages = {
+    ...translatedUrls,
+    "x-default": `${BASE}${localizedPath("en", path)}`,
+  };
 
   return locales.map((locale: Locale) => ({
     url: `${BASE}${localizedPath(locale, path)}`,

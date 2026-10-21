@@ -1,0 +1,75 @@
+{
+  "live-multicamera": [
+    "Blackmagic URSA Broadcast G2",
+    "Blackmagic URSA Studio Viewfinder G2",
+    "Blackmagic URSA Viewfinder",
+    "Blackmagic Micro Studio Camera 4K G2"
+  ],
+  "switching-routing": [
+    "ATEM 2 M/E Advanced Panel 20",
+    "ATEM 4 M/E Constellation 4K",
+    "ATEM 4 M/E Constellation HD",
+    "Blackmagic Videohub 20x20 12G",
+    "Blackmagic Videohub 40x40 12G",
+    "Blackmagic Micro Converter BiDirectional SDI/HDMI 12G",
+    "Blackmagic Streaming Encoder 4K",
+    "Stream Deck XL Expanded 32-Key"
+  ],
+  "capture-playout": [
+    "DeckLink 4K Extreme 12G",
+    "DeckLink Duo 2",
+    "DeckLink Duo 3",
+    "DeckLink Duo 4",
+    "DeckLink Quad 2"
+  ],
+  "optics": [
+    "Fujinon A10x4.8BEVM-28 4,8-48mm F1.8 B4 Mount",
+    "Fujinon Digi Power A22x7.8BERD-S48B 78-172mm F1.8, 2/3\", B4 Mount",
+    "Fujinon XA20sx8.5BERM-K3 ENG Lens",
+    "Fujinon XA20SX8.5BERM-K32/3\" 8.5-170mm ENG XA EXCEED Series HD Zoom Lens",
+    "Fujinon FSD-11 Focus Servo Demand",
+    "Fujinon FSM-30B Focus Servo Module",
+    "Fujinon SRD-92B Zoom Demand"
+  ],
+  "field-capture": [
+    "DJI Osmo Pocket 4",
+    "ULANZI MT90 Cka Mini Tripod for DJI Pocket 4",
+    "Blackmagic URSA Mini Pro 12K",
+    "Canon EF 16-35 mm f/2.8L III USM",
+    "Sigma 24-70mm F2.8 DG OS HSM Lens",
+    "Viltrox EF-M2 II AF 0.71x Adapter Speedbooster for EF Lens to MFT M43 GH5 Camera"
+  ],
+  "comms-transmission": [
+    "Accsoon CineView Master 4K",
+    "HOLLYLAND SOLIDCOM C1 PRO 8s",
+    "HOLLYLAND Solidcom C1 Pro Hub"
+  ],
+  "lighting": [
+    "Amaran Ray 360c",
+    "Nanlite PavoTube II 30C RGB LED Tube Light (4', 4Kit)",
+    "Nanlite PavoTube Transparent Polycarbonate T12 Clip with Magnet",
+    "Nanlite T12 Tube Holder With Mini Ball Head",
+    "NEEWER 35.4\"/90cm Softbox",
+    "SHAPE C-Stand 40\" Sliding Leg 10'6\"",
+    "SMALLRIG 78.7\" / 200cm Light Stand"
+  ],
+  "rigging-monitoring": [
+    "SmallRig 1053 Aluminum Alloy 15mm Rod",
+    "SmallRig 15mm LWS Universal Lens Support",
+    "SmallRig 1798 Baseplate with Dual 15mm Rod Clamp",
+    "SmallRig 1872 Carbon Fiber 15mm Rod",
+    "SMALLRIG 2157 Universal Magic Arm with Small Ballhead",
+    "SmallRig 2169 VCT-14 Quick Release Tripod Plate",
+    "SmallRig 3016 V Mount Battery Plate 15mm Rod Clamp",
+    "FEELWORLD Monitor F5 PRO V4 6\"",
+    "Cartoni focus 12 SDS Alu System",
+    "Manfrotto MVMXPR0500",
+    "Manfrotto MVT502AM"
+  ],
+  "power": [
+    "SmallRig NP-F970 Battery 7800 mAh",
+    "SmallRig VB99 SE mini V-Mount Battery 99Wh",
+    "USB-C Rechargeable Camera Battery for Sony NP-F970",
+    "DuraPro USB-C LP E6 LP-E6NH Dummy Battery"
+  ]
+}

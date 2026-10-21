@@ -5,16 +5,20 @@ import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { getCases } from "@/lib/content";
+import { breadcrumbJsonLd } from "@/lib/jsonld";
 import { imageUrlFor, localized } from "@/lib/sanity";
 import { localizedPath, locales, type Locale } from "@/i18n";
+import { pageMetadata } from "@/lib/seo";
+import { SEO_LABELS } from "@/lib/seo-copy";
 
 export const revalidate = 60;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "portfolio" });
-  return { title: t("title"), description: t("intro") };
+  return pageMetadata({ locale: locale as Locale, path: "/portfolio", title: t("title"), description: t("intro") });
 }
 
 export default async function PortfolioPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -23,7 +27,14 @@ export default async function PortfolioPage({ params }: { params: Promise<{ loca
   if (!locales.includes(locale)) notFound();
   setRequestLocale(locale);
   const [t, cases] = await Promise.all([getTranslations({ locale, namespace: "portfolio" }), getCases()]);
+  const labels = SEO_LABELS[locale].breadcrumb;
+  const breadcrumb = breadcrumbJsonLd(locale, "/portfolio", (path) => {
+    if (path === "/") return labels.home;
+    if (path === "/portfolio") return labels.portfolio;
+    throw new Error(`Unknown portfolio breadcrumb path: ${path}`);
+  });
   return <Section><Container>
+    <JsonLd data={breadcrumb} />
     <p className="font-mono text-xs uppercase tracking-widest text-waveform-cyan">Poerator / Portfolio</p>
     <h1 className="mt-4 text-4xl font-bold text-white md:text-6xl">{t("title")}</h1>
     <p className="mt-5 max-w-3xl text-lg leading-8 text-surface-muted">{t("intro")}</p>

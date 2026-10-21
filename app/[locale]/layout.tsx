@@ -21,7 +21,17 @@ export default async function LocaleLayout({ children, params }: {
   if (!locales.includes(locale as Locale)) notFound();
   setRequestLocale(locale);
   const messages = await getMessages();
-  return <NextIntlClientProvider messages={messages}>
+  const contact = messages.contact;
+  if (typeof contact !== "object" || contact === null || typeof contact.form !== "object" || contact.form === null) {
+    throw new Error("Client contact-form translations are missing");
+  }
+  const clientMessages = {
+    nav: messages.nav,
+    cookieBanner: messages.cookieBanner,
+    contact: { form: contact.form },
+  };
+  return <NextIntlClientProvider messages={clientMessages}>
+    {/* Organization, not LocalBusiness: no confirmed public storefront address or opening hours. */}
     <JsonLd data={organizationJsonLd} />
     <Header />
     <main>{children}</main>

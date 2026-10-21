@@ -3,7 +3,6 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { Search } from "lucide-react";
-import { FieldList } from "@/components/ui/FieldList";
 import type { Category, Equipment } from "@/lib/content";
 import { localizedPath, type Locale } from "@/i18n";
 
@@ -15,25 +14,33 @@ type Labels = {
   allCategories: string;
   noResults: string;
   availableIn: string;
+  details: string;
+  application: string;
+  type: string;
 };
 
-export function EquipmentCatalog({ items, categories, locale, labels, detailsLabel, hireTerms }: {
+type Group = { key: string; title: string; application: string; items: Equipment[] };
+
+export function EquipmentCatalog({ items, categories, groups, locale, labels }: {
   items: Equipment[];
   categories: Category[];
+  groups: Group[];
   locale: Locale;
   labels: Labels;
-  detailsLabel: string;
-  hireTerms: { title: string; fields: [string, string][]; quoteText: string };
 }) {
   const [query, setQuery] = useState("");
   const [city, setCity] = useState("");
   const [category, setCategory] = useState("");
   const cities = useMemo(() => Array.from(new Set(items.flatMap((item) => item.availableCities || []))).sort(), [items]);
-  const filtered = items.filter((item) =>
-    (!query || `${item.name[locale] || item.name.en || ""} ${item.shortDescription?.[locale] || ""}`.toLowerCase().includes(query.toLowerCase())) &&
-    (!city || item.availableCities?.includes(city)) &&
-    (!category || item.category?.slug === category),
-  );
+  const filteredGroups = groups.map((group) => ({
+    ...group,
+    items: group.items.filter((item) =>
+      (!query || `${item.name[locale] || item.name.en || ""} ${item.shortDescription?.[locale] || ""}`.toLowerCase().includes(query.toLowerCase())) &&
+      (!city || item.availableCities?.includes(city)) &&
+      (!category || item.category?.slug === category),
+    ),
+  })).filter((group) => group.items.length > 0);
+  const filteredCount = filteredGroups.reduce((total, group) => total + group.items.length, 0);
 
   return <>
     <div className="mt-10 grid gap-3 md:grid-cols-[1fr_220px_240px]">
@@ -49,27 +56,23 @@ export function EquipmentCatalog({ items, categories, locale, labels, detailsLab
         <option value="">{labels.allCategories}</option>{categories.map((item) => <option key={item._id} value={item.slug}>{item.title[locale] || item.title.en}</option>)}
       </select></label>
     </div>
-    <section className="mt-8 grid gap-6 border border-surface-border bg-legal-black-panel p-6 md:grid-cols-[1fr_auto] md:items-center">
-      <div>
-        <h2 className="text-xl font-semibold text-white">{hireTerms.title}</h2>
-        <div className="mt-4"><FieldList fields={hireTerms.fields} /></div>
-      </div>
-      <Link href={localizedPath(locale, "/contact")} className="inline-flex w-fit bg-waveform-cyan px-5 py-4 font-mono text-xs font-bold uppercase tracking-wider text-legal-black">
-        {hireTerms.quoteText}
-      </Link>
-    </section>
-    {filtered.length ? <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {filtered.map((item) => <Link key={item._id} href={localizedPath(locale, `/equipment/${item.category?.slug || "equipment"}/${item.slug}`)} className="group flex min-h-56 flex-col justify-between border border-surface-border bg-legal-black-panel p-6 transition hover:border-waveform-cyan/60">
-        <div>
-          <p className="font-mono text-[10px] uppercase tracking-wider text-waveform-cyan">{item.category?.title[locale] || item.category?.title.en}</p>
-          <h2 className="mt-3 text-xl font-semibold text-white">{item.name.en}</h2>
-          <p className="mt-3 line-clamp-3 text-sm leading-6 text-surface-muted">{item.shortDescription?.[locale] || item.shortDescription?.en}</p>
+    {filteredCount ? <div className="mt-12 space-y-14">
+      {filteredGroups.map((group) => <section key={group.key}>
+        <h2 className="text-2xl font-semibold text-white md:text-3xl">{group.title}</h2>
+        <p className="mt-3 font-mono text-xs text-surface-muted">{labels.application}: <span className="text-white">{group.application}</span></p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {group.items.map((item) => <Link key={item._id} href={localizedPath(locale, `/equipment/${item.category?.slug || "equipment"}/${item.slug}`)} className="group flex min-h-56 flex-col justify-between border border-surface-border bg-legal-black-panel p-6 transition hover:border-waveform-cyan/60">
+            <div>
+              <h3 className="text-lg font-semibold text-white">{item.name.en}</h3>
+              <p className="mt-3 text-xs text-surface-muted">{labels.type}: <span className="text-white">{item.shortDescription?.[locale] || item.shortDescription?.en}</span></p>
+            </div>
+            <div className="mt-8 flex items-end justify-between gap-3">
+              <p className="text-xs text-surface-muted">{labels.availableIn} {item.availableCities?.slice(0, 2).join(", ")}{(item.availableCities?.length || 0) > 2 ? ` +${(item.availableCities?.length || 0) - 2}` : ""}</p>
+              <span className="shrink-0 text-xs text-waveform-cyan">{labels.details} →</span>
+            </div>
+          </Link>)}
         </div>
-        <div className="mt-8 flex items-end justify-between gap-3">
-          <p className="text-xs text-surface-muted">{labels.availableIn} {item.availableCities?.slice(0, 2).join(", ")}{(item.availableCities?.length || 0) > 2 ? ` +${(item.availableCities?.length || 0) - 2}` : ""}</p>
-          <span className="shrink-0 text-xs text-waveform-cyan">{detailsLabel} →</span>
-        </div>
-      </Link>)}
+      </section>)}
     </div> : <p className="mt-12 border border-dashed border-surface-border p-8 text-center text-sm text-surface-muted">{labels.noResults}</p>}
   </>;
 }

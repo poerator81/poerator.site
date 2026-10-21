@@ -3,14 +3,18 @@ import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { locales, type Locale } from "@/i18n";
+import { breadcrumbJsonLd } from "@/lib/jsonld";
+import { pageMetadata } from "@/lib/seo";
+import { SEO_LABELS } from "@/lib/seo-copy";
 
 const sectionKeys = ["controller", "dataCollected", "purpose", "cookies", "sharing", "transfers", "retention", "rights", "security", "children", "changes", "contact"] as const;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "privacy" });
-  return { title: t("metaTitle"), description: t("metaDescription") };
+  return pageMetadata({ locale: locale as Locale, path: "/privacy-policy", title: t("metaTitle"), description: t("metaDescription") });
 }
 
 export default async function PrivacyPolicyPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -19,7 +23,14 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
   if (!locales.includes(locale)) notFound();
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "privacy" });
+  const labels = SEO_LABELS[locale].breadcrumb;
+  const breadcrumb = breadcrumbJsonLd(locale, "/privacy-policy", (path) => {
+    if (path === "/") return labels.home;
+    if (path === "/privacy-policy") return labels.privacy;
+    throw new Error(`Unknown privacy policy breadcrumb path: ${path}`);
+  });
   return <Section><Container>
+    <JsonLd data={breadcrumb} />
     <div className="max-w-3xl">
       <h1 className="text-4xl font-bold text-white md:text-5xl">{t("title")}</h1>
       <p className="mt-3 font-mono text-xs uppercase tracking-wide text-surface-muted">{t("lastUpdated")}</p>

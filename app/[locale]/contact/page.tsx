@@ -3,15 +3,19 @@ import { AtSign, BriefcaseBusiness, Mail, Phone } from "lucide-react";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ContactForm } from "@/components/contact/ContactForm";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { HUB_CITIES } from "@/lib/constants";
 import { locales, type Locale } from "@/i18n";
+import { breadcrumbJsonLd } from "@/lib/jsonld";
+import { pageMetadata } from "@/lib/seo";
+import { SEO_LABELS } from "@/lib/seo-copy";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "contact" });
-  return { title: t("metaTitle"), description: t("metaDescription") };
+  return pageMetadata({ locale: locale as Locale, path: "/contact", title: t("metaTitle"), description: t("metaDescription") });
 }
 
 export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -20,7 +24,14 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
   if (!locales.includes(locale)) notFound();
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "contact" });
+  const labels = SEO_LABELS[locale].breadcrumb;
+  const breadcrumb = breadcrumbJsonLd(locale, "/contact", (path) => {
+    if (path === "/") return labels.home;
+    if (path === "/contact") return labels.contact;
+    throw new Error(`Unknown contact breadcrumb path: ${path}`);
+  });
   return <Section><Container>
+    <JsonLd data={breadcrumb} />
     <div className="grid gap-12 md:grid-cols-2">
       <div>
         <p className="font-mono text-xs uppercase tracking-widest text-waveform-cyan">{t("eyebrow")}</p>

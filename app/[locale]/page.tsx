@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { notFound } from "next/navigation";
@@ -9,13 +10,24 @@ import { MetricsBar } from "@/components/home/MetricsBar";
 import { ServicesGrid } from "@/components/home/ServicesGrid";
 import { TrustedBy } from "@/components/home/TrustedBy";
 import { WhyUs } from "@/components/home/WhyUs";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { getCases } from "@/lib/content";
 import { HUB_CITIES } from "@/lib/constants";
 import { localizedPath, locales, type Locale } from "@/i18n";
+import { breadcrumbJsonLd } from "@/lib/jsonld";
+import { pageAlternates } from "@/lib/seo";
+import { SEO_LABELS } from "@/lib/seo-copy";
 
 export const revalidate = 60;
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale: localeParam } = await params;
+  const locale = localeParam as Locale;
+  if (!locales.includes(locale)) return {};
+  return { alternates: pageAlternates(locale, "/") };
+}
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale: localeParam } = await params;
@@ -24,7 +36,12 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "home" });
   const cases = await getCases();
+  const breadcrumb = breadcrumbJsonLd(locale, "/", (path) => {
+    if (path === "/") return SEO_LABELS[locale].breadcrumb.home;
+    throw new Error(`Unknown home breadcrumb path: ${path}`);
+  });
   return <>
+    <JsonLd data={breadcrumb} />
     <section className="relative isolate overflow-hidden border-b border-surface-border">
       <HeroVideo />
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(ellipse_at_75%_35%,rgba(0,229,199,0.10),transparent_42%)]" />

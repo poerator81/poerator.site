@@ -7,17 +7,18 @@ import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
-import { pageAlternates } from "@/lib/seo";
+import { serviceJsonLd } from "@/lib/jsonld";
+import { pageMetadata } from "@/lib/seo";
+import { SEO_LABELS } from "@/lib/seo-copy";
+import { FLEET_LINKS, equipmentHref } from "@/lib/equipment-links";
+import { getEquipment } from "@/lib/content";
+import { FLEET_COPY } from "@/lib/capability-groups";
 import { localizedPath, locales, type Locale } from "@/i18n";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "servicesPage" });
-  return {
-    title: t("title"),
-    description: t("intro"),
-    alternates: pageAlternates(locale as Locale, "/services"),
-  };
+  return pageMetadata({ locale: locale as Locale, path: "/services", title: t("title"), description: t("intro") });
 }
 
 export default async function ServicesPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -26,7 +27,10 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
   if (!locales.includes(locale)) notFound();
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "home" });
-  const page = await getTranslations({ locale, namespace: "servicesPage" });
+  const [page, items] = await Promise.all([
+    getTranslations({ locale, namespace: "servicesPage" }),
+    getEquipment(),
+  ]);
   const services = [
     { key: "liveProduction", href: "/contact", Icon: Radio, id: "live-production" },
     { key: "obVanHire", href: "/ob-van", Icon: Truck, id: "ob-van-hire" },
@@ -34,11 +38,21 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
     { key: "videoProduction", href: "/video-production", Icon: Clapperboard, id: "video-production" },
     { key: "motionGraphics", href: "/contact", Icon: Sparkles, id: "motion-graphics" },
   ] as const;
-  const breadcrumb = breadcrumbJsonLd(locale, [
-    { name: "Home", path: "/" },
-    { name: page("title"), path: "/services" },
-  ]);
+  const labels = SEO_LABELS[locale].breadcrumb;
+  const breadcrumb = breadcrumbJsonLd(locale, "/services", (path) => {
+    if (path === "/") return labels.home;
+    if (path === "/services") return labels.services;
+    throw new Error(`Unknown services breadcrumb path: ${path}`);
+  });
+  const service = serviceJsonLd({
+    locale,
+    path: "/services",
+    name: "Production services",
+    serviceType: "Live broadcast production",
+    description: "Live production, OB van hire, equipment, video production, motion graphics.",
+  });
   return <Section><Container>
+    <JsonLd data={service} />
     <JsonLd data={breadcrumb} />
     <p className="font-mono text-xs uppercase tracking-widest text-waveform-cyan">Poerator / Services</p>
     <h1 className="mt-4 max-w-4xl text-4xl font-bold text-white md:text-6xl">{page("title")}</h1>
@@ -51,5 +65,18 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
         <Link href={localizedPath(locale, href)} className="mt-6 inline-block font-mono text-xs uppercase tracking-wider text-waveform-cyan">{t("services.learnMore")} →</Link>
       </article>)}
     </div>
+    <section className="mt-14 border-t border-surface-border pt-6">
+      <h2 className="text-2xl font-semibold text-white">{FLEET_COPY[locale].fleetCapabilityLabel}</h2>
+      <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+        {FLEET_LINKS.map(({ slug, anchor }) => {
+          const href = equipmentHref(slug, items);
+          const [label, linkText] = anchor.split(": ");
+          return <li key={slug} className="border border-surface-border bg-legal-black-panel p-4 text-sm">
+            <span className="text-surface-muted">{label}: </span>
+            <Link href={localizedPath(locale, href)} className="text-waveform-cyan hover:underline">{linkText}</Link>
+          </li>;
+        })}
+      </ul>
+    </section>
   </Container></Section>;
 }

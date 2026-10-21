@@ -1,7 +1,7 @@
 import { absoluteUrl, SITE_URL } from "@/lib/seo";
 import type { Locale } from "@/i18n";
 
-const CITIES = [
+export const CITIES = [
   "Vilnius",
   "Riga",
   "Tallinn",
@@ -12,27 +12,24 @@ const CITIES = [
   "London",
   "Brussels",
 ];
-const ORGANIZATION_ID = `${SITE_URL}/#organization`;
+const city = (name: string) => ({ "@type": "City", name });
+export const ORG_ID = `${SITE_URL}/#organization`;
 
 export const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": ORGANIZATION_ID,
+  "@id": ORG_ID,
   name: "Poerator",
   url: SITE_URL,
   logo: `${SITE_URL}/logo-white.png`,
-  email: "hey@poerator.com",
-  telephone: "+370 672 78991",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Vilnius",
-    addressCountry: "LT",
+  areaServed: CITIES.map(city),
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "sales",
+    telephone: "+370 672 78991",
+    email: "hey@poerator.com",
   },
-  sameAs: [
-    "https://www.instagram.com/poerator_lab/",
-    "https://www.linkedin.com/company/108798958",
-  ],
-  areaServed: CITIES.map((name) => ({ "@type": "City", name })),
+  sameAs: ["https://www.instagram.com/poerator_lab/", "https://www.linkedin.com/company/108798958"],
 };
 
 export function serviceJsonLd(options: {
@@ -49,16 +46,27 @@ export function serviceJsonLd(options: {
     serviceType: options.serviceType,
     description: options.description,
     url: absoluteUrl(options.locale, options.path),
-    provider: { "@id": ORGANIZATION_ID },
-    areaServed: CITIES.map((name) => ({ "@type": "City", name })),
+    provider: { "@id": ORG_ID },
+    areaServed: CITIES.map(city),
   };
 }
 
-export function breadcrumbJsonLd(locale: Locale, items: { name: string; path: string }[]) {
+export function breadcrumbJsonLd(
+  locale: Locale,
+  path: string,
+  labelFor: (segmentPath: string) => string,
+) {
+  const segments = path.split("/").filter(Boolean);
+  const crumbs = [{ name: labelFor("/"), path: "/" }];
+  let accumulated = "";
+  for (const segment of segments) {
+    accumulated += `/${segment}`;
+    crumbs.push({ name: labelFor(accumulated), path: accumulated });
+  }
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    itemListElement: items.map((item, index) => ({
+    itemListElement: crumbs.map((item, index) => ({
       "@type": "ListItem",
       position: index + 1,
       name: item.name,
@@ -67,57 +75,17 @@ export function breadcrumbJsonLd(locale: Locale, items: { name: string; path: st
   };
 }
 
-export function collectionPageJsonLd(options: {
-  locale: Locale;
-  path: string;
-  name: string;
-  description: string;
-}) {
+export function itemListJsonLd(options: { locale: Locale; items: { category: string; slug: string }[] }) {
   return {
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    name: options.name,
-    description: options.description,
-    url: absoluteUrl(options.locale, options.path),
-    isPartOf: { "@id": ORGANIZATION_ID },
-  };
-}
-
-export function equipmentJsonLd(options: {
-  locale: Locale;
-  path: string;
-  name: string;
-  description: string;
-  brand?: string;
-  category: string;
-  image?: string;
-  sku: string;
-  dailyRate?: number;
-}) {
-  const url = absoluteUrl(options.locale, options.path);
-  return {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    name: options.name,
-    description: options.description,
-    sku: options.sku,
-    category: options.category,
-    url,
-    ...(options.brand ? { brand: { "@type": "Brand", name: options.brand } } : {}),
-    ...(options.image ? { image: options.image } : {}),
-    ...(options.dailyRate != null
-      ? {
-          offers: {
-            "@type": "Offer",
-            url,
-            priceCurrency: "EUR",
-            price: options.dailyRate,
-            availability: "https://schema.org/InStock",
-            businessFunction: "http://purl.org/goodrelations/v1#LeaseOut",
-            seller: { "@id": ORGANIZATION_ID },
-            areaServed: CITIES.map((name) => ({ "@type": "City", name })),
-          },
-        }
-      : {}),
+    "@type": "ItemList",
+    name: "Equipment fleet",
+    itemListOrder: "https://schema.org/ItemListOrderAscending",
+    numberOfItems: options.items.length,
+    itemListElement: options.items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: absoluteUrl(options.locale, `/equipment/${item.category}/${item.slug}`),
+    })),
   };
 }
