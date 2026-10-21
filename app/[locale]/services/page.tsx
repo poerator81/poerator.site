@@ -5,6 +5,8 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/jsonld";
 import { pageAlternates } from "@/lib/seo";
 import { localizedPath, locales, type Locale } from "@/i18n";
 
@@ -32,7 +34,12 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
     { key: "videoProduction", href: "/video-production", Icon: Clapperboard, id: "video-production" },
     { key: "motionGraphics", href: "/contact", Icon: Sparkles, id: "motion-graphics" },
   ] as const;
+  const breadcrumb = breadcrumbJsonLd(locale, [
+    { name: "Home", path: "/" },
+    { name: page("title"), path: "/services" },
+  ]);
   return <Section><Container>
+    <JsonLd data={breadcrumb} />
     <p className="font-mono text-xs uppercase tracking-widest text-waveform-cyan">Poerator / Services</p>
     <h1 className="mt-4 max-w-4xl text-4xl font-bold text-white md:text-6xl">{page("title")}</h1>
     <p className="mt-6 max-w-3xl text-lg leading-8 text-surface-muted">{page("intro")}</p>
