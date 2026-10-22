@@ -13,5 +13,5 @@ export const CASE_SERVICES: Record<string, { delivered: DeliveredService; kind: 
   "poerator-crew-at-starladder-starseries-19": { delivered: "live", kind: "technical" },
   "gurtam-commercial-production-service": { delivered: "video", kind: "commercial" },
   "video-production-for-xm-textiles": { delivered: "video", kind: "commercialVideo" },
-  "nested-lands-tv-show-teaser-trailer": { delivered: "video", kind: "teaser" },
+  "nested-lands-game-teaser-trailer": { delivered: "video", kind: "teaser" },
 };

@@ -1,3 +1,4 @@
+import { LEGACY_CASE_SLUGS } from "@/lib/case-content";
 import {
   casesQuery,
   categoriesQuery,
@@ -76,9 +77,9 @@ export const getObVan = () => sanityClient.fetch<ObVan | null>(obVanQuery);
 export const getEquipmentBySlug = (slug: string) =>
   sanityClient.fetch<Equipment | null>(equipmentBySlugQuery, { slug });
 export const getCaseBySlug = (slug: string) =>
-  sanityClient.fetch<CaseStudy | null>(`*[_type == "caseStudy" && slug.current == $slug][0] {
+  sanityClient.fetch<CaseStudy | null>(`*[_type == "caseStudy" && slug.current in [$slug, $legacySlug]][0] {
     _id, clientName, projectType, "slug": slug.current, title, summary, coverImage, videoUrl
-  }`, { slug });
+  }`, { slug, legacySlug: LEGACY_CASE_SLUGS[slug] ?? slug });
 export const getGeoBySlug = (slug: string) =>
   sanityClient.fetch<GeoLanding | null>(geoBySlugQuery, { slug });
 
