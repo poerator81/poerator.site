@@ -62,7 +62,7 @@ export default async function TeamPage({ params }: { params: Promise<{ locale: s
           jobTitle: roles.length === 1 ? roles[0] : roles,
           worksFor: { "@id": ORG_ID },
           knowsAbout: member.roles.flatMap((role) => area(role, locale)).filter((item, i, all) => all.indexOf(item) === i).slice(0, 4),
-          sameAs: [member.instagram],
+          sameAs: [member.linkedin, member.instagram].filter(Boolean),
         };
       }),
       { "@type": "Organization", "@id": ORG_ID, employee: TEAM.map((member) => ({ "@id": `${SITE_URL}/team#${member.slug}` })) },
@@ -73,7 +73,7 @@ export default async function TeamPage({ params }: { params: Promise<{ locale: s
 
   const renderMember = (member: TeamMember, role: TeamMember["roles"][number]) => {
     const primary = member.roles[0] === role;
-    const responsibility = area(role, locale).map((item, i) => i === 0 ? item : item.charAt(0).toLowerCase() + item.slice(1)).join(", ");
+    const responsibility = area(role, locale).map((item, i) => i === 0 || locale === "de" ? item : item.charAt(0).toLowerCase() + item.slice(1)).join(", ");
     return <section key={`${member.slug}-${role}`} id={primary ? member.slug : `${member.slug}-2`} className="border-t border-surface-border pt-6">
       <h2 className="text-2xl font-semibold text-white">{member.name}</h2>
       <div className={primary ? "mt-4 grid gap-6 sm:grid-cols-[200px_1fr]" : "mt-4"}>
@@ -88,6 +88,7 @@ export default async function TeamPage({ params }: { params: Promise<{ locale: s
             <Row name={label("specialisation", locale)}><ul className="space-y-1">{member.equipment.map((item) => <li key={item.slug}><Link href={localizedPath(locale, `/equipment/${item.category}/${item.slug}`)} className={link}>{item.name}</Link></li>)}</ul></Row>
             <Row name={label("location", locale)}>{member.city}</Row>
             <Row name={label("languages", locale)}>{member.languages.map((key) => LANGUAGE_NAMES[key][locale]).join(", ")}</Row>
+            {member.linkedin && <Row name="LinkedIn"><a href={member.linkedin} rel="me noopener" target="_blank" className={link}>{member.linkedin.replace("https://www.linkedin.com/in/", "").replace(/\/$/, "")}</a></Row>}
             <Row name="Instagram"><a href={member.instagram} rel="me noopener" target="_blank" className={link}>{member.instagram.replace("https://www.instagram.com/", "@").replace(/\/$/, "")}</a></Row>
           </>}
         </dl>

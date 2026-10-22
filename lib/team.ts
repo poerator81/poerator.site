@@ -10,6 +10,7 @@ export type TeamMember = {
   roles: ArchetypeKey[];
   city: string;
   instagram: string;
+  linkedin?: string;
   languages: LanguageKey[];
   equipment: { category: string; slug: string; name: string }[];
   cases: string[] | "all";
@@ -24,11 +25,11 @@ const FUJINON = { category: "lenses", slug: "fujinon-xa20sx8-5berm-k3-eng-lens",
 const STREAM_DECK = { category: "switching-control", slug: "stream-deck-xl-expanded-32-key", name: "Stream Deck XL Expanded 32-Key" };
 
 export const TEAM: TeamMember[] = [
-  { slug: "roman-chernyavskiy", name: "Roman Chernyavskiy", roles: ["producer"], city: "Vilnius", instagram: "https://www.instagram.com/poerator", languages: ["ru", "en", "lt"], equipment: [ATEM_4, URSA_G2], cases: "all" },
-  { slug: "yana-sabaleuskaya", name: "Yana Sabaleuskaya", roles: ["technical"], city: "Vilnius", instagram: "https://www.instagram.com/obez.yanka", languages: ["ru", "en"], equipment: [ATEM_4, ATEM_2, VIDEOHUB, URSA_G2], cases: ["iem-masters-cologne", "corgi-race-vilnius-2026", "esports-community-casts"] },
+  { slug: "roman-chernyavskiy", name: "Roman Chernyavskiy", roles: ["producer"], city: "Vilnius", instagram: "https://www.instagram.com/poerator", linkedin: "https://www.linkedin.com/in/roman-chernyavskiy-a2665070/", languages: ["ru", "en", "lt"], equipment: [ATEM_4, URSA_G2], cases: "all" },
+  { slug: "yana-sabaleuskaya", name: "Yana Sabaleuskaya", roles: ["technical"], city: "Vilnius", instagram: "https://www.instagram.com/obez.yanka", languages: ["ru", "en"], equipment: [ATEM_4, ATEM_2, VIDEOHUB, URSA_G2], cases: ["iem-cologne", "corgi-race-vilnius-2026", "esports-community-casts"] },
   { slug: "konstantin-ostapenko", name: "Konstantin Ostapenko", roles: ["camera"], city: "Vilnius", instagram: "https://www.instagram.com/kostia.ostap/", languages: ["ru", "en", "lt"], equipment: [URSA_G2, URSA_12K, FUJINON], cases: ["corgi-race-vilnius-2026", "corgi-race-vilnius-2025-stream"] },
   { slug: "hlib-dubrovin", name: "Hlib Dubrovin", roles: ["technical"], city: "Paris", instagram: "https://www.instagram.com/doobrovin_gleb/", languages: ["ru", "en", "fr"], equipment: [ATEM_4, ATEM_2, VIDEOHUB, URSA_G2], cases: ["ewc-2026-paris"] },
-  { slug: "andrej-vinogradov", name: "Andrej Vinogradov", roles: ["vision"], city: "Vilnius", instagram: "https://www.instagram.com/andrej_vinogradov/", languages: ["ru", "en", "lt"], equipment: [ATEM_4, ATEM_2, STREAM_DECK], cases: ["iem-masters-cologne", "corgi-race-vilnius-2025-stream", "esports-community-casts", "ewc-2026-paris"] },
+  { slug: "andrej-vinogradov", name: "Andrej Vinogradov", roles: ["vision"], city: "Vilnius", instagram: "https://www.instagram.com/andrej_vinogradov/", linkedin: "https://www.linkedin.com/in/andrej-vinogradov-91274610b/", languages: ["ru", "en", "lt"], equipment: [ATEM_4, ATEM_2, STREAM_DECK], cases: ["iem-cologne", "corgi-race-vilnius-2025-stream", "esports-community-casts", "ewc-2026-paris"] },
   { slug: "patrik-lissovenko", name: "Patrik Lissovenko", roles: ["camera", "vision"], city: "Tallinn", instagram: "https://www.instagram.com/patrik.lissovenko/", languages: ["ru", "en", "et"], equipment: [URSA_G2, URSA_12K, FUJINON], cases: ["fiba-3x3-split-challenger-tournament-broadcasting"] },
 ];
 
@@ -40,7 +41,7 @@ export const CASE_NAMES: Record<string, string> = {
   "ewc-2026-paris": "EWC 2026 Paris",
   "fiba-3x3-split-challenger-tournament-broadcasting": "FIBA 3x3 Split Challenger",
   "gurtam-commercial-production-service": "GURTAM Commercial",
-  "iem-masters-cologne": "IEM Masters Cologne",
+  "iem-cologne": "IEM Cologne",
   "mozzart-bet-super-liga-ar-graphics": "Mozzart Bet Super Liga AR Graphics",
   "nested-lands-game-teaser-trailer": "Nested Lands Game Teaser Trailer",
   "primera-federacion-broadcasting": "Primera Federación Broadcasting",
@@ -94,7 +95,7 @@ export const RESPONSIBILITY: Record<ArchetypeKey, Record<Locale, string[]>> = {
     de: ["OB-Van-Konfiguration", "Signalfluss", "Kamera-Shading", "Koordination der technischen Crew"],
     fr: ["Configuration du car-régie", "flux de signaux", "shading des caméras", "coordination de l'équipe technique"],
     pl: ["Konfiguracja wozu transmisyjnego", "przepływ sygnału", "shading kamer", "koordynacja ekipy technicznej"],
-    lt: ["OB furgono konfigūracija", "signalo srautas", "kamerų šeidingas", "techninės komandos koordinavimas"],
+    lt: ["OB furgono konfigūracija", "signalo srautas", "kamerų derinimas", "techninės komandos koordinavimas"],
   },
   camera: {
     en: ["Camera position", "framing", "lens selection", "camera movement"],

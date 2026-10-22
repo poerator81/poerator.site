@@ -9,6 +9,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { getCases } from "@/lib/content";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
 import { imageUrlFor, localized } from "@/lib/sanity";
+import { CARD_ALT } from "@/lib/case-content";
 import { localizedPath, locales, type Locale } from "@/i18n";
 import { pageMetadata } from "@/lib/seo";
 import { SEO_LABELS } from "@/lib/seo-copy";
@@ -42,7 +43,7 @@ export default async function PortfolioPage({ params }: { params: Promise<{ loca
       {cases.map((item) => {
         const image = item.coverImage?.asset ? imageUrlFor(item.coverImage).width(900).height(600).url() : "";
         return <Link key={item._id} href={localizedPath(locale, `/portfolio/${item.slug}`)} className="group border border-surface-border bg-legal-black-panel">
-          {image ? <div className="relative aspect-[16/10] overflow-hidden"><Image src={image} alt="" fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover transition duration-500 group-hover:scale-105" /></div> : <div className="aspect-[16/10] bg-[#18181d]" />}
+          {image ? <div className="relative aspect-[16/10] overflow-hidden"><Image src={image} alt={CARD_ALT[item.slug] ?? localized(item.title, locale) ?? item.clientName} fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover transition duration-500 group-hover:scale-105" /></div> : <div className="aspect-[16/10] bg-[#18181d]" />}
           <div className="p-5"><p className="font-mono text-[10px] uppercase tracking-wider text-surface-muted">{item.clientName} · {item.projectType}</p><h2 className="mt-2 font-semibold text-white">{localized(item.title, locale) || item.clientName}</h2><p className="mt-3 line-clamp-3 text-sm leading-6 text-surface-muted">{localized(item.summary, locale)}</p></div>
         </Link>;
       })}

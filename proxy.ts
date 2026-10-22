@@ -1,5 +1,9 @@
 import { NextResponse, type NextRequest } from "next/server";
 
+const RENAMED_CASES: Record<string, string> = {
+  "nested-lands-tv-show-teaser-trailer": "nested-lands-game-teaser-trailer",
+  "iem-masters-cologne": "iem-cologne",
+};
 const prefixedLocales = new Set(["en", "de", "fr", "pl", "lt"]);
 
 export function proxy(request: NextRequest) {
@@ -12,10 +16,10 @@ export function proxy(request: NextRequest) {
     return NextResponse.redirect(url, 308);
   }
 
-  const legacyNestedLands = pathname.match(/^(?:\/(de|fr|pl|lt))?\/portfolio\/nested-lands-tv-show-teaser-trailer\/?$/);
-  if (legacyNestedLands) {
+  const renamedCase = pathname.match(/^(?:\/(de|fr|pl|lt))?\/portfolio\/(nested-lands-tv-show-teaser-trailer|iem-masters-cologne)\/?$/);
+  if (renamedCase) {
     const url = request.nextUrl.clone();
-    url.pathname = `${legacyNestedLands[1] ? `/${legacyNestedLands[1]}` : ""}/portfolio/nested-lands-game-teaser-trailer`;
+    url.pathname = `${renamedCase[1] ? `/${renamedCase[1]}` : ""}/portfolio/${RENAMED_CASES[renamedCase[2]]}`;
     return NextResponse.redirect(url, 308);
   }
 

@@ -34,7 +34,7 @@ export async function TrustedBy({ locale }: { locale: Locale }) {
                 <span key={client.name} className="flex shrink-0 items-center px-8">
                   <Image
                     src={client.src}
-                    alt={duplicate ? "" : client.name}
+                    alt={duplicate ? "" : `${client.name} - client logo`}
                     width={client.width}
                     height={client.height}
                     className="h-10 w-auto object-contain opacity-60 grayscale transition hover:opacity-100 hover:grayscale-0"

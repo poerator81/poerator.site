@@ -87,7 +87,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...STATIC_PATHS.flatMap((path) =>
       entry(path, FIXED_LASTMOD[path] ?? now, path === "" ? 1 : 0.8, "weekly"),
     ),
-    ...entry("/team", TEAM_LASTMOD, 0.4, "yearly"),
+    ...entry("/team", TEAM_LASTMOD, 0.7, "monthly"),
     ...slugs.categories.flatMap((category) =>
       entry(`/equipment/${category.slug}`, new Date(category.updated), 0.7, "weekly"),
     ),

@@ -7,7 +7,7 @@ export const CASE_SERVICES: Record<string, { delivered: DeliveredService; kind: 
   "ewc-2025-additional-languages-streams": { delivered: "live", kind: "esports" },
   "ewc-2026-paris": { delivered: "live", kind: "esportsEngineering" },
   "fiba-3x3-split-challenger-tournament-broadcasting": { delivered: "live", kind: "sports" },
-  "iem-masters-cologne": { delivered: "live", kind: "esports" },
+  "iem-cologne": { delivered: "live", kind: "esports" },
   "mozzart-bet-super-liga-ar-graphics": { delivered: "live", kind: "graphics" },
   "primera-federacion-broadcasting": { delivered: "live", kind: "sports" },
   "poerator-crew-at-starladder-starseries-19": { delivered: "live", kind: "technical" },

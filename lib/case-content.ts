@@ -2,13 +2,18 @@ import type { Locale } from "@/i18n";
 
 export type LocaleText = Record<Locale, string>;
 export type Text = string | LocaleText;
-export type KitPart = Text | { equipment: { category: string; slug: string } };
+export type KitPart = Text | { equipment: { category: string; slug: string } } | { link: string; text: Text };
 export type ResultLabel =
   | "output" | "delivery" | "audience" | "duration" | "client" | "languages"
   | "scope" | "peakAudience" | "events" | "ar" | "use" | "partner";
 
 export type CaseContent = {
-  header: { project: Text; format: Text; venue?: Text; crew?: Text; date?: Text };
+  header: {
+    project: Text; format: Text; venue?: Text; crew?: Text; date?: Text; dates?: Text; client?: Text;
+    team?: string[]; scope?: Text[]; deliverables?: Text[]; deliverablesNote?: Text;
+  };
+  plainRelated?: boolean;
+  summaryFromHeader?: boolean;
   challenge?: Text;
   kit?: KitPart[][];
   constraints?: Text[];
@@ -30,6 +35,9 @@ export const CASE_LABELS: Record<string, LocaleText> = {
   venue: x("Venue", "Ort", "Lieu", "Miejsce", "Vieta"),
   crew: x("Crew", "Team", "Équipe", "Ekipa", "Komanda"),
   date: x("Date", "Datum", "Date", "Data", "Data"),
+  dates: x("Dates", "Termine", "Dates", "Terminy", "Datos"),
+  team: x("Team on site", "Team vor Ort", "Équipe sur place", "Zespół na miejscu", "Komanda vietoje"),
+  deliverables: x("Deliverables", "Leistungen", "Livrables", "Zakres dostaw", "Pristatomi darbai"),
   challenge: x("Challenge", "Herausforderung", "Enjeu", "Wyzwanie", "Iššūkis"),
   kit: x("Kit used", "Eingesetzte Technik", "Matériel utilisé", "Użyty sprzęt", "Naudota įranga"),
   constraints: x("Constraints", "Rahmenbedingungen", "Contraintes", "Ograniczenia", "Apribojimai"),
@@ -213,7 +221,7 @@ export const CASE_CONTENT: Record<string, CaseContent> = {
     ),
     kit: [
       [x("Full control rooms", "Komplette Regieräume", "Régies complètes", "Pełne reżyserki", "Pilnos transliacijų valdymo patalpos")],
-      ["ATEM"],
+      [atem],
       [x("Camera control", "Kamerasteuerung", "Contrôle caméra", "Sterowanie kamerami", "Kamerų valdymas")],
       [x("Audio mixers", "Audiomischer", "Mélangeurs audio", "Miksery audio", "Garso mikšeriai")],
       [x("Dedicated fibre internet", "Dedizierter Glasfaser-Internetzugang", "Internet fibre dédié", "Dedykowany internet światłowodowy", "Dedikuotas šviesolaidinis internetas")],
@@ -262,7 +270,7 @@ export const CASE_CONTENT: Record<string, CaseContent> = {
     kit: [
       [atem],
       [ursaG2],
-      ["Blackmagic Micro Studio Camera 4K G2"],
+      [{ equipment: { category: "cameras", slug: "blackmagic-micro-studio-camera-4k-g2" } }],
     ],
     constraints: [
       x("2 months on site", "2 Monate vor Ort", "2 mois sur site", "2 miesiące na miejscu", "2 mėnesiai vietoje"),
@@ -429,26 +437,54 @@ export const CASE_CONTENT: Record<string, CaseContent> = {
     ),
   },
 
-  "iem-masters-cologne": {
+  "iem-cologne": {
     header: {
-      project: "IEM Masters Cologne",
-      format: x("Community casts", "Community-Casts", "Community casts", "Community casty", "Bendruomenės transliacijos"),
-      venue: "Cologne",
+      project: "IEM Cologne",
+      format: x("Community casts", "Community-Casts", "Community casts", "Community casty", "Community castai"),
+      venue: "LANXESS arena, Cologne",
+      dates: x("August 2025, June 2026", "August 2025, Juni 2026", "août 2025, juin 2026", "sierpień 2025, czerwiec 2026", "2025 m. rugpjūtis, 2026 m. birželis"),
+      client: "ESL",
+      crew: "2025: 6, 2026: 21",
       date: "2025, 2026",
+      team: ["roman-chernyavskiy", "yana-sabaleuskaya", "andrej-vinogradov"],
+      scope: [
+        x("Cameras", "Kameras", "Caméras", "Kamery", "Kameros"),
+        x("Switching", "Bildmischung", "Mixage", "Przełączanie", "Perjungimas"),
+        x("Graphics", "Grafik", "Graphismes", "Grafika", "Grafika"),
+        x("Live crosses from areas under the stands", "Live-Schalten aus den Bereichen unter den Tribünen", "Duplex en direct depuis les zones sous les tribunes", "Wejścia na żywo z obszarów pod trybunami", "Tiesioginiai įjungimai iš erdvių po tribūnomis"),
+        x("Directing", "Regie", "Réalisation", "Reżyseria", "Režisūra"),
+        x("Engineering", "Technik", "Ingénierie", "Inżynieria", "Inžinerija"),
+      ],
+      deliverables: [
+        x("3 community casts", "3 Community-Casts", "3 community casts", "3 community casty", "3 community castai"),
+        x("6-13 hours per cast per day", "6–13 Stunden pro Cast und Tag", "6 à 13 heures par cast et par jour", "6–13 godzin na cast dziennie", "6–13 valandų per transliaciją per dieną"),
+        x("4 days", "4 Tage", "4 jours", "4 dni", "4 dienos"),
+      ],
+      deliverablesNote: x("Same deliverables in 2025 and 2026", "Gleiche Leistungen 2025 und 2026", "Mêmes livrables en 2025 et 2026", "Taki sam zakres w 2025 i 2026", "Tie patys pristatomi darbai 2025 ir 2026 m."),
     },
+    kit: [
+      [ursaG2],
+      [{ equipment: { category: "cameras", slug: "blackmagic-ursa-mini-pro-12k" } }],
+      [{ equipment: { category: "cameras", slug: "blackmagic-micro-studio-camera-4k-g2" } }],
+      [atem],
+      [solidcom],
+      [{ link: "/equipment/lenses", text: x("Fujinon lenses", "Fujinon-Objektive", "Objectifs Fujinon", "Obiektywy Fujinon", "Fujinon objektyvai") }],
+    ],
+    summaryFromHeader: true,
+    plainRelated: true,
     seoTitle: x(
-      "IEM Masters Cologne | Esports Casts | Poerator",
-      "IEM Masters Cologne | Esports-Casts | Poerator",
-      "IEM Masters Cologne | Casts esport | Poerator",
-      "IEM Masters Cologne | Casty esportowe | Poerator",
-      "IEM Masters Cologne | E. sporto transliacijos | Poerator",
+      "IEM Cologne | Esports Casts | Poerator",
+      "IEM Cologne | Esports-Casts | Poerator",
+      "IEM Cologne | Casts esport | Poerator",
+      "IEM Cologne | Casty esportowe | Poerator",
+      "IEM Cologne | Esporto transliacijos | Poerator",
     ),
     seoDescription: x(
-      "IEM Masters Cologne: community casts from the oldest CS tournament. Cologne, Germany. Production by Poerator.",
-      "IEM Masters Cologne: Community-Casts vom ältesten CS-Turnier. Köln, Deutschland. Produktion von Poerator.",
-      "IEM Masters Cologne : casts communautaires du plus ancien tournoi CS. Cologne, Allemagne. Production Poerator.",
-      "IEM Masters Cologne: community casty z najstarszego turnieju CS. Kolonia, Niemcy. Produkcja Poerator.",
-      "IEM Masters Cologne: bendruomenių transliacijos iš seniausio CS turnyro. Kiolnas, Vokietija. Gamina Poerator.",
+      "IEM Cologne: community casts, LANXESS arena, Cologne. Dates: August 2025, June 2026. Crew: 6, 21.",
+      "IEM Cologne: Community-Casts, LANXESS arena, Cologne. Termine: August 2025, Juni 2026. Crew: 6, 21.",
+      "IEM Cologne : community casts, LANXESS arena, Cologne. Dates : août 2025, juin 2026. Équipe : 6, 21.",
+      "IEM Cologne: community casty, LANXESS arena, Cologne. Terminy: sierpień 2025, czerwiec 2026. Ekipa: 6, 21.",
+      "IEM Cologne: community castai, LANXESS arena, Cologne. Datos: 2025 m. rugpjūtis, 2026 m. birželis. Komanda: 6, 21.",
     ),
   },
 
@@ -609,4 +645,20 @@ export const CASE_CONTENT: Record<string, CaseContent> = {
 
 export const LEGACY_CASE_SLUGS: Record<string, string> = {
   "nested-lands-game-teaser-trailer": "nested-lands-tv-show-teaser-trailer",
+};
+
+export const CARD_ALT: Record<string, string> = {
+  "corgi-race-vilnius-2025-stream": "Corgi Race Vilnius 2025 - live stream, Vilnius",
+  "corgi-race-vilnius-2026": "Corgi Race Vilnius 2026 - live broadcast, Vilnius",
+  "primera-federacion-broadcasting": "Primera Federación - football league broadcast",
+  "esports-community-casts": "Esports Community Casts - community casts",
+  "ewc-2025-additional-languages-streams": "EWC 2025 - additional language streams, Riyadh",
+  "ewc-2026-paris": "EWC 2026 Paris - broadcast engineering, Paris",
+  "fiba-3x3-split-challenger-tournament-broadcasting": "FIBA 3x3 Split Challenger - tournament broadcasting, Split",
+  "gurtam-commercial-production-service": "Gurtam - commercial production service",
+  "iem-cologne": "IEM Cologne - community casts, Cologne",
+  "mozzart-bet-super-liga-ar-graphics": "Mozzart Bet Super Liga - AR graphics",
+  "nested-lands-game-teaser-trailer": "Nested Lands - game teaser trailer, Kernave",
+  "poerator-crew-at-starladder-starseries-19": "Starladder StarSeries 19 - esports tournament technical crew, Budapest",
+  "video-production-for-xm-textiles": "XM Textiles - product videos, Vilnius",
 };

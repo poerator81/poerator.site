@@ -31,6 +31,7 @@ export function Header() {
     ["obVan", "/ob-van"],
     ["videoProduction", "/video-production"],
     ["portfolio", "/portfolio"],
+    ["team", "/team"],
     ["contact", "/contact"],
   ] as const;
 

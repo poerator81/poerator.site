@@ -13,7 +13,7 @@ export async function Footer({ locale }: { locale: Locale }) {
   const links = [
     { href: "/services", label: n("services") },
     { href: "/team", label: TEAM_LABELS.team[locale] },
-    { href: "/video-production", label: "Video production" },
+    { href: "/video-production", label: n("videoProduction") },
     { href: "/equipment", label: n("equipment") },
     { href: "/portfolio", label: n("portfolio") },
     { href: "/contact", label: n("contact") },

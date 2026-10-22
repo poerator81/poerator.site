@@ -32,11 +32,11 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
     getEquipment(),
   ]);
   const services = [
-    { key: "liveProduction", href: "/contact", Icon: Radio, id: "live-production" },
+    { key: "liveProduction", href: "/ob-van", Icon: Radio, id: "live-production" },
     { key: "obVanHire", href: "/ob-van", Icon: Truck, id: "ob-van-hire" },
     { key: "equipmentRental", href: "/equipment", Icon: Camera, id: "equipment-rental" },
     { key: "videoProduction", href: "/video-production", Icon: Clapperboard, id: "video-production" },
-    { key: "motionGraphics", href: "/contact", Icon: Sparkles, id: "motion-graphics" },
+    { key: "motionGraphics", href: "/video-production", Icon: Sparkles, id: "motion-graphics" },
   ] as const;
   const labels = SEO_LABELS[locale].breadcrumb;
   const breadcrumb = breadcrumbJsonLd(locale, "/services", (path) => {
