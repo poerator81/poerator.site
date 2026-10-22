@@ -59,6 +59,7 @@ export const CASE_LABELS: Record<string, LocaleText> = {
 
 const atem = { equipment: { category: "switching-control", slug: "atem-4-m-e-constellation-4k" } };
 const ursaG2 = { equipment: { category: "cameras", slug: "blackmagic-ursa-broadcast-g2" } };
+const eq = (category: string, slug: string) => [{ equipment: { category, slug } }];
 const solidcom = { equipment: { category: "audio-comms", slug: "hollyland-solidcom-c1-pro-8s" } };
 
 export const CASE_CONTENT: Record<string, CaseContent> = {
@@ -225,6 +226,7 @@ export const CASE_CONTENT: Record<string, CaseContent> = {
       [x("Camera control", "Kamerasteuerung", "Contrôle caméra", "Sterowanie kamerami", "Kamerų valdymas")],
       [x("Audio mixers", "Audiomischer", "Mélangeurs audio", "Miksery audio", "Garso mikšeriai")],
       [x("Dedicated fibre internet", "Dedizierter Glasfaser-Internetzugang", "Internet fibre dédié", "Dedykowany internet światłowodowy", "Dedikuotas šviesolaidinis internetas")],
+      eq("audio-comms", "hollyland-solidcom-c1-pro-hub"),
     ],
     constraints: [
       x("Different venue for each cast", "Jeweils anderer Veranstaltungsort pro Cast", "Un lieu différent pour chaque cast", "Inne miejsce dla każdego castu", "Kiekvienai transliacijai skirtinga vieta"),
@@ -322,6 +324,8 @@ export const CASE_CONTENT: Record<string, CaseContent> = {
       ["Riedel ", x("intercom", "Intercom", "interphone", "intercom", "ryšio sistema")],
       ["vMix ", x("servers", "Server", "serveurs", "serwery", "serveriai")],
       [x("Fibre signal switching", "Glasfaser-Signalumschaltung", "Commutation de signal sur fibre", "Przełączanie sygnału światłowodowego", "Šviesolaidinis signalų komutavimas")],
+      [atem],
+      [solidcom],
     ],
     constraints: [
       x("4 tournament stages", "4 Turnierbühnen", "4 scènes de tournoi", "4 sceny turniejowe", "4 turnyro scenos"),
@@ -369,6 +373,8 @@ export const CASE_CONTENT: Record<string, CaseContent> = {
       [x("Sony Z150 camera", "Sony Z150 Kamera", "Caméra Sony Z150", "Kamera Sony Z150", "Sony Z150 kamera")],
       ["vMix ", x("servers", "Server", "serveurs", "serwery", "serveriai")],
       ["Starlink"],
+      [atem],
+      [ursaG2],
     ],
     constraints: [
       x("Open-air venue, changing light", "Freiluft-Spielort, wechselndes Licht", "Site en plein air, lumière changeante", "Obiekt na otwartym powietrzu, zmienne światło", "Atvira aikštelė, kintanti šviesa"),
@@ -411,6 +417,8 @@ export const CASE_CONTENT: Record<string, CaseContent> = {
       [x("Sony FX6 camera", "Sony FX6 Kamera", "Caméra Sony FX6", "Kamera Sony FX6", "Sony FX6 kamera")],
       [x("Anamorphic lenses", "Anamorphe Objektive", "Objectifs anamorphiques", "Obiektywy anamorficzne", "Anamorfiniai objektyvai")],
       [x("Boom microphone", "Angelmikrofon", "Micro perche", "Mikrofon na tyczce", "Mikrofonas ant kranelio")],
+      eq("cameras", "dji-osmo-pocket-4"),
+      eq("lenses", "sigma-24-70mm-f2-8-dg-os-hsm-lens"),
     ],
     constraints: [x("6 videos in 2 shooting days", "6 Videos in 2 Drehtagen", "6 vidéos en 2 jours de tournage", "6 filmów w 2 dni zdjęciowe", "6 vaizdo įrašai per 2 filmavimo dienas")],
     result: [{ label: "output", value: x("6 videos", "6 Videos", "6 vidéos", "6 filmów", "6 vaizdo įrašai") }],
@@ -500,6 +508,7 @@ export const CASE_CONTENT: Record<string, CaseContent> = {
       [x("In-house AR software", "Eigene AR-Software", "Logiciel AR interne", "Własne oprogramowanie AR", "Nuosava AR programinė įranga")],
       [x("Database integration", "Datenbankanbindung", "Intégration de base de données", "Integracja z bazą danych", "Integracija su duomenų baze")],
       [x("AI tracking", "KI-Tracking", "Suivi par IA", "Śledzenie z użyciem AI", "DI sekimas")],
+      [atem],
     ],
     constraints: [
       x("Camera feeds supplied by the broadcasters", "Kamerasignale werden von den Sendern geliefert", "Flux caméra fournis par les diffuseurs", "Sygnały z kamer dostarczane przez nadawców", "Kamerų signalus pateikia transliuotojai"),
