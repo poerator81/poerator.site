@@ -7,12 +7,13 @@ import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { CaseServices } from "@/components/portfolio/CaseServices";
 import { CaseBody, CaseHeader } from "@/components/portfolio/CaseDetails";
+import { PROJECT_LEAD, ROLE_LABELS, TEAM_LABELS } from "@/lib/team";
 import { CASE_CONTENT, resolveText } from "@/lib/case-content";
 import { getCaseBySlug } from "@/lib/content";
 import { imageUrlFor, localized } from "@/lib/sanity";
 import { localizedPath, type Locale } from "@/i18n";
-import { breadcrumbJsonLd } from "@/lib/jsonld";
-import { pageMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, ORG_ID } from "@/lib/jsonld";
+import { pageMetadata, SITE_URL } from "@/lib/seo";
 import { SEO_LABELS } from "@/lib/seo-copy";
 import { JsonLd } from "@/components/seo/JsonLd";
 
@@ -56,9 +57,18 @@ export default async function PortfolioDetailPage({ params }: { params: Promise<
   });
   return <Section><Container>
     <JsonLd data={breadcrumb} />
+    <JsonLd data={{
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": `${SITE_URL}/team#${PROJECT_LEAD.slug}`,
+      name: PROJECT_LEAD.name,
+      jobTitle: ROLE_LABELS.producer[locale],
+      worksFor: { "@id": ORG_ID },
+    }} />
     <Link href={localizedPath(locale, "/portfolio")} className="font-mono text-xs uppercase tracking-widest text-waveform-cyan">← {t("title")}</Link>
     <p className="mt-8 font-mono text-xs uppercase tracking-wider text-surface-muted">{item.clientName} · {item.projectType}</p>
     <h1 className="mt-3 max-w-5xl text-4xl font-bold text-white md:text-6xl">{title}</h1>
+    <p className="mt-4 font-mono text-sm"><span className="text-surface-muted">{TEAM_LABELS.projectLead[locale]}: </span><Link href={`${localizedPath(locale, "/team")}#${PROJECT_LEAD.slug}`} className="text-waveform-cyan hover:underline">{PROJECT_LEAD.name}</Link></p>
     {image && <div className="relative mt-10 aspect-[16/9] max-h-[650px] overflow-hidden border border-surface-border"><Image src={image} alt={title} fill sizes="100vw" className="object-cover" /></div>}
     {content ? <CaseHeader content={content} locale={locale} /> : <p className="mt-8 max-w-3xl whitespace-pre-line text-lg leading-8 text-surface-muted">{localized(item.summary, locale)}</p>}
     {item.videoUrl && <a href={item.videoUrl} target="_blank" rel="noreferrer" className="mt-7 inline-block text-sm text-waveform-cyan">{t("watch")} ↗</a>}

@@ -23,6 +23,8 @@ const FIXED_LASTMOD: Record<string, Date> = {
   "/ob-van": new Date("2026-10-22T00:00:00+03:00"),
 };
 
+const TEAM_LASTMOD = new Date("2026-10-22T00:00:00+03:00");
+
 type Slugs = {
   equipment: { slug: string; category: string; updated: string }[];
   categories: { slug: string; updated: string }[];
@@ -85,6 +87,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...STATIC_PATHS.flatMap((path) =>
       entry(path, FIXED_LASTMOD[path] ?? now, path === "" ? 1 : 0.8, "weekly"),
     ),
+    ...entry("/team", TEAM_LASTMOD, 0.4, "yearly"),
     ...slugs.categories.flatMap((category) =>
       entry(`/equipment/${category.slug}`, new Date(category.updated), 0.7, "weekly"),
     ),

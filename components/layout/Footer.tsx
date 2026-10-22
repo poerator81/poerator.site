@@ -3,6 +3,7 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
 import { HUB_CITIES } from "@/lib/constants";
+import { TEAM_LABELS } from "@/lib/team";
 import { localizedPath, type Locale } from "@/i18n";
 
 export async function Footer({ locale }: { locale: Locale }) {
@@ -11,6 +12,7 @@ export async function Footer({ locale }: { locale: Locale }) {
   const n = await getTranslations({ locale, namespace: "nav" });
   const links = [
     { href: "/services", label: n("services") },
+    { href: "/team", label: TEAM_LABELS.team[locale] },
     { href: "/video-production", label: "Video production" },
     { href: "/equipment", label: n("equipment") },
     { href: "/portfolio", label: n("portfolio") },
