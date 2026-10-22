@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { locales, localizedPath, type Locale } from "@/i18n";
 import { HREFLANG } from "@/lib/seo";
+import { GEO_CITIES } from "@/lib/geo-pages";
 import { sanityClient } from "@/lib/sanity";
 
 export const revalidate = 3600;
@@ -23,13 +24,13 @@ const FIXED_LASTMOD: Record<string, Date> = {
   "/ob-van": new Date("2026-10-22T00:00:00+03:00"),
 };
 
+const GEO_LASTMOD = new Date("2026-10-22T00:00:00+03:00");
 const TEAM_LASTMOD = new Date("2026-10-22T00:00:00+03:00");
 
 type Slugs = {
   equipment: { slug: string; category: string; updated: string }[];
   categories: { slug: string; updated: string }[];
   cases: { slug: string; updated: string }[];
-  geo: { slug: string; updated: string }[];
 };
 
 async function getSlugs(): Promise<Slugs> {
@@ -42,9 +43,6 @@ async function getSlugs(): Promise<Slugs> {
         "slug": slug.current, "updated": _updatedAt
       },
       "cases": *[_type == "caseStudy" && defined(slug.current)]{
-        "slug": slug.current, "updated": _updatedAt
-      },
-      "geo": *[_type == "geoLanding" && defined(slug.current) && slug.current != "ob-van-rental-berlin"]{
         "slug": slug.current, "updated": _updatedAt
       }
     }`,
@@ -102,8 +100,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...slugs.cases.flatMap((item) =>
       entry(`/portfolio/${item.slug}`, new Date(item.updated), 0.6, "monthly"),
     ),
-    ...slugs.geo.flatMap((landing) =>
-      entry(`/${landing.slug}`, new Date(landing.updated), 0.7, "monthly"),
+    ...GEO_CITIES.flatMap((page) =>
+      page.locales.length === locales.length
+        ? entry(`/${page.slug}`, GEO_LASTMOD, 0.7, "monthly")
+        : page.locales.map((locale: Locale) => ({
+            url: `${BASE}${localizedPath(locale, `/${page.slug}`)}`,
+            lastModified: GEO_LASTMOD,
+            changeFrequency: "monthly" as const,
+            priority: 0.7,
+          })),
     ),
   ];
 }

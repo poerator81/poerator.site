@@ -8,6 +8,7 @@ import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { getEquipment, getEquipmentBySlug } from "@/lib/content";
 import { FLEET_COPY, isCapabilityGroup } from "@/lib/capability-groups";
+import { GEO_CITIES, GEO_EQUIPMENT, hireAnchor } from "@/lib/geo-pages";
 import { relatedEquipment } from "@/lib/equipment-links";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
 import { pageMetadata } from "@/lib/seo";
@@ -99,7 +100,11 @@ export default async function EquipmentDetailPage({ params }: { params: Promise<
           <div><dt className="inline text-surface-muted">{FLEET_COPY[locale].description}: </dt><dd className="inline text-white">{localized(item.shortDescription, locale)}</dd></div>
           <div><dt className="inline text-surface-muted">{FLEET_COPY[locale].capability}: </dt><dd className="inline text-white">{group.title}</dd></div>
           <div><dt className="inline text-surface-muted">{FLEET_COPY[locale].application}: </dt><dd className="inline text-white">{group.application}</dd></div>
-          <div><dt className="inline text-surface-muted">{FLEET_COPY[locale].citiesServed}: </dt><dd className="inline text-white">{item.availableCities?.join(", ")}</dd></div>
+          <div><dt className="inline text-surface-muted">{FLEET_COPY[locale].citiesServed}: </dt><dd className="inline text-white">{item.availableCities?.map((city, index) => {
+            const geo = item.slug === GEO_EQUIPMENT.slug ? GEO_CITIES.find((entry) => entry.city === city) : undefined;
+            const geoLocale = geo && (geo.locales.includes(locale) ? locale : geo.locales[0]);
+            return <span key={city}>{index > 0 && ", "}{geo && geoLocale ? <Link href={localizedPath(geoLocale, `/${geo.slug}`)} className="text-waveform-cyan hover:underline">{hireAnchor(locale, city)}</Link> : city}</span>;
+          })}</dd></div>
         </dl>
         <Link href={localizedPath(locale, "/contact")} className="mt-8 inline-block bg-waveform-cyan px-6 py-4 font-mono text-xs font-bold uppercase tracking-wider text-legal-black">{FLEET_COPY[locale].requestQuote}</Link>
       </div>
