@@ -17,6 +17,12 @@ const STATIC_PATHS = [
   "/privacy-policy",
 ];
 
+// Pages with a fixed lastmod: updated only when the page content is edited.
+const FIXED_LASTMOD: Record<string, Date> = {
+  "/video-production": new Date("2026-10-22T00:00:00+03:00"),
+  "/ob-van": new Date("2026-10-22T00:00:00+03:00"),
+};
+
 type Slugs = {
   equipment: { slug: string; category: string; updated: string }[];
   categories: { slug: string; updated: string }[];
@@ -77,7 +83,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [
     ...STATIC_PATHS.flatMap((path) =>
-      entry(path, now, path === "" ? 1 : 0.8, "weekly"),
+      entry(path, FIXED_LASTMOD[path] ?? now, path === "" ? 1 : 0.8, "weekly"),
     ),
     ...slugs.categories.flatMap((category) =>
       entry(`/equipment/${category.slug}`, new Date(category.updated), 0.7, "weekly"),

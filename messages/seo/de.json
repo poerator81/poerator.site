@@ -82,7 +82,7 @@
     "equipment": {
       "cameras": { "label": "Kameras", "value": "Blackmagic URSA Broadcast G2" },
       "lenses": { "label": "Objektive", "value": "Fujinon" },
-      "source": { "label": "Quelle", "value": "Mietpark von Poerator" },
+      "source": { "label": "Quelle", "value": "Fuhrpark von Poerator" },
       "browse": "Ausrüstung ansehen"
     },
     "projects": {

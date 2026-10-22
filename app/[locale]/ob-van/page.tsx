@@ -15,6 +15,8 @@ import { localizedPath, locales, type Locale } from "@/i18n";
 
 export const revalidate = 60;
 
+const RELATED: Record<Locale, string> = { en: "Related", de: "Siehe auch", fr: "Voir aussi", pl: "Zobacz też", lt: "Susiję" };
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "seoObVan.seo" });
@@ -80,7 +82,11 @@ export default async function ObVanPage({ params }: { params: Promise<{ locale: 
         {key === "cameraChannels" && quoteLink}
       </section>)}
     </div>
-    <section className="mt-12 border-t border-surface-border pt-6">
+    <p className="mt-12 font-mono text-xs">
+      <span className="text-surface-muted">{RELATED[locale]}: </span>
+      <Link href={localizedPath(locale, "/video-production")} className="text-waveform-cyan hover:underline">{SEO_LABELS[locale].serviceNames.video}</Link>
+    </p>
+    <section className="mt-6 border-t border-surface-border pt-6">
       <h2 className="text-2xl font-semibold text-white">{t("sections.requestQuote")}</h2>
       {quoteLink}
     </section>

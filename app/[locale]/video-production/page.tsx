@@ -46,7 +46,7 @@ export default async function VideoProductionPage({ params }: { params: Promise<
   const projects = [
     { key: "gurtam", slug: "gurtam-commercial-production-service" },
     { key: "xmTextiles", slug: "video-production-for-xm-textiles" },
-    { key: "nestedLands", slug: "nested-lands-tv-show-teaser-trailer" },
+    { key: "nestedLands", slug: "nested-lands-game-teaser-trailer" },
   ];
   const quoteLink = <Link href={localizedPath(locale, "/contact")} className="mt-6 inline-flex bg-waveform-cyan px-6 py-4 font-mono text-xs font-bold uppercase tracking-wider text-legal-black">{common("requestQuote")}</Link>;
 

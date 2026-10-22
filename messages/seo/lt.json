@@ -82,7 +82,7 @@
     "equipment": {
       "cameras": { "label": "Kameros", "value": "Blackmagic URSA Broadcast G2" },
       "lenses": { "label": "Objektyvai", "value": "Fujinon" },
-      "source": { "label": "Šaltinis", "value": "Poerator nuomos parkas" },
+      "source": { "label": "Šaltinis", "value": "Poerator parkas" },
       "browse": "Peržiūrėti įrangą"
     },
     "projects": {

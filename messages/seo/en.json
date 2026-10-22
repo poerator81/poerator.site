@@ -82,7 +82,7 @@
     "equipment": {
       "cameras": { "label": "Cameras", "value": "Blackmagic URSA Broadcast G2" },
       "lenses": { "label": "Lenses", "value": "Fujinon" },
-      "source": { "label": "Source", "value": "Poerator hire fleet" },
+      "source": { "label": "Source", "value": "Poerator fleet" },
       "browse": "Browse equipment"
     },
     "projects": {
