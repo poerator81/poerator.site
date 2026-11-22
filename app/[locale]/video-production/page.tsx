@@ -48,7 +48,7 @@ export default async function VideoProductionPage({ params }: { params: Promise<
     { key: "xmTextiles", slug: "video-production-for-xm-textiles" },
     { key: "nestedLands", slug: "nested-lands-game-teaser-trailer" },
   ];
-  const quoteLink = <Link href={localizedPath(locale, "/contact")} className="mt-6 inline-flex bg-waveform-cyan px-6 py-4 font-mono text-xs font-bold uppercase tracking-wider text-legal-black">{common("requestQuote")}</Link>;
+  const quoteLink = <Link href={localizedPath(locale, "/contact")} className="mt-6 inline-flex bg-waveform-cyan px-6 py-4 font-mono text-xs font-bold uppercase tracking-wider text-legal-black">[{common("requestQuote")}]</Link>;
 
   return <Section><Container>
     <JsonLd data={service} />
@@ -62,18 +62,17 @@ export default async function VideoProductionPage({ params }: { params: Promise<
         [t("scope.label"), t("scope.value")],
       ]} />
     </div>
-    {quoteLink}
 
     <div className="mt-12 grid gap-10 md:grid-cols-2">
       <section className="border-t border-surface-border pt-6">
         <h2 className="text-2xl font-semibold text-white">{t("sections.services")}</h2>
         <ul className="mt-4 list-disc space-y-2 pl-5 font-mono text-sm text-white">
-          {[0, 1, 2, 3, 4].map((index) => <li key={index}>{t(`serviceItems.${index}`)}</li>)}
+          {[0, 1, 2, 3, 4, 5, 6].map((index) => <li key={index}><span className="text-surface-muted">{t(`serviceLabels.${index}`)}: </span>{t(`serviceItems.${index}`)}</li>)}
         </ul>
       </section>
       <section className="border-t border-surface-border pt-6">
         <h2 className="text-2xl font-semibold text-white">{t("sections.productionScope")}</h2>
-        <div className="mt-4"><FieldList fields={fields("production", ["scope", "cycle", "motionGraphics"])} /></div>
+        <div className="mt-4"><FieldList fields={fields("production", ["scope", "cycle", "formats", "motionGraphics", "equipment", "cities"])} /></div>
       </section>
       <section className="border-t border-surface-border pt-6">
         <h2 className="text-2xl font-semibold text-white">{t("sections.equipment")}</h2>

@@ -63,7 +63,7 @@
     "title": "Vaizdo įrašų gamybos įmonė",
     "serviceLink": "Paslauga: video production",
     "company": { "label": "Įmonė", "value": "Poerator" },
-    "services": { "label": "Paslaugos", "value": "reklamos, prekės ženklo filmai, dokumentika" },
+    "services": { "label": "Paslaugos", "value": "Poerator kuria reklamą, prekės ženklo, dokumentinius ir vaidybinius filmus, filmuoja koncertus, kuria anonsus ir vaizdo gidus YouTube." },
     "scope": { "label": "Apimtis", "value": "nuo idėjos iki galutinio rezultato" },
     "sections": {
       "services": "Paslaugos",
@@ -73,11 +73,15 @@
       "coverage": "Aptarnavimo teritorija",
       "requestQuote": "Prašyti pasiūlymo"
     },
-    "serviceItems": ["Reklamos", "Prekės ženklo filmai", "Dokumentika", "Anonsai", "YouTube instrukcijos"],
+    "serviceLabels": ["Reklamos", "Prekės ženklo filmai", "Dokumentiniai filmai", "Vaidybiniai filmai", "Koncertų filmavimas", "Anonsai", "YouTube gidai"],
+    "serviceItems": ["Reklamos gamyba", "Prekės ženklo filmų gamyba", "Dokumentinių filmų gamyba", "Vaidybinių filmų gamyba", "Koncertų filmavimas", "Anonsų gamyba", "Vaizdo gidai YouTube"],
     "production": {
       "scope": { "label": "Apimtis", "value": "nuo idėjos iki galutinio rezultato" },
-      "cycle": { "label": "Gamybos ciklas", "value": "visas ciklas" },
-      "motionGraphics": { "label": "Animuota grafika", "value": "transliacijų grafika, AR grafika" }
+      "cycle": { "label": "Ciklas", "value": "nuo idėjos iki galutinio rezultato" },
+      "formats": { "label": "Formatai", "value": "reklama, koncertai, vaidybiniai filmai, dokumentiniai filmai, anonsai, vaizdo gidai" },
+      "motionGraphics": { "label": "Grafika", "value": "transliacijų grafika, AR grafika" },
+      "equipment": { "label": "Įranga", "value": "žr. skiltį Įranga: kameros, objektyvai, filmavimas vietoje ir apšvietimas" },
+      "cities": { "label": "Miestai", "value": "Vilnius, Riga, Tallinn, Warsaw, Berlin, Paris, Belgrade, London, Brussels" }
     },
     "equipment": {
       "cameras": { "label": "Kameros", "value": "Blackmagic URSA Broadcast G2" },
@@ -88,7 +92,7 @@
     "projects": {
       "gurtam": { "name": "GURTAM", "description": "reklama, visos gamybos paslaugos" },
       "xmTextiles": { "name": "XM Textiles", "description": "reklaminis vaizdo įrašas, YouTube instrukcijos" },
-      "nestedLands": { "name": "Nested Lands", "description": "TV laidos anonsas, visas ciklas" }
+      "nestedLands": { "name": "Nested Lands", "description": "Vaizdo žaidimo anonsas. 2023. Kernave, Lithuania. Komanda: 34. Filmavimo trukmė: 1 diena. Kamera: Sony FX6." }
     },
     "coverage": { "label": "Centrai", "value": "Vilnius, Riga, Tallinn, Warsaw, Berlin, Paris, Belgrade, London, Brussels" }
   },

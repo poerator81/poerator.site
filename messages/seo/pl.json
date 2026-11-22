@@ -63,7 +63,7 @@
     "title": "Firma zajmująca się produkcją wideo",
     "serviceLink": "Usługa: video production",
     "company": { "label": "Firma", "value": "Poerator" },
-    "services": { "label": "Usługi", "value": "reklamy, filmy wizerunkowe, dokumenty" },
+    "services": { "label": "Usługi", "value": "Poerator produkuje reklamy, filmy wizerunkowe, dokumentalne i fabularne, a także filmuje koncerty oraz produkuje zwiastuny i poradniki wideo na YouTube." },
     "scope": { "label": "Zakres", "value": "od koncepcji do finalnej wersji" },
     "sections": {
       "services": "Usługi",
@@ -73,11 +73,15 @@
       "coverage": "Obszar działania",
       "requestQuote": "Poproś o wycenę"
     },
-    "serviceItems": ["Reklamy", "Filmy wizerunkowe", "Filmy dokumentalne", "Zwiastuny", "Poradniki YouTube"],
+    "serviceLabels": ["Reklamy", "Filmy wizerunkowe", "Filmy dokumentalne", "Filmy fabularne", "Filmowanie koncertów", "Zwiastuny", "Poradniki YouTube"],
+    "serviceItems": ["Produkcja reklamowa", "Produkcja filmów wizerunkowych", "Produkcja filmów dokumentalnych", "Produkcja filmów fabularnych", "Filmowanie koncertów", "Produkcja zwiastunów", "Poradniki wideo na YouTube"],
     "production": {
       "scope": { "label": "Zakres", "value": "od koncepcji do finalnej wersji" },
-      "cycle": { "label": "Cykl produkcyjny", "value": "pełny cykl" },
-      "motionGraphics": { "label": "Grafika ruchoma", "value": "grafika transmisyjna, grafika AR" }
+      "cycle": { "label": "Cykl", "value": "od koncepcji do finalnej wersji" },
+      "formats": { "label": "Formaty", "value": "reklama, koncerty, filmy fabularne, filmy dokumentalne, zwiastuny, poradniki wideo" },
+      "motionGraphics": { "label": "Grafika", "value": "grafika transmisyjna, grafika AR" },
+      "equipment": { "label": "Sprzęt", "value": "zobacz sekcję Sprzęt: kamery, obiektywy, nagrania terenowe i oświetlenie" },
+      "cities": { "label": "Miasta", "value": "Vilnius, Riga, Tallinn, Warsaw, Berlin, Paris, Belgrade, London, Brussels" }
     },
     "equipment": {
       "cameras": { "label": "Kamery", "value": "Blackmagic URSA Broadcast G2" },
@@ -88,7 +92,7 @@
     "projects": {
       "gurtam": { "name": "GURTAM", "description": "reklama, kompleksowa realizacja produkcji" },
       "xmTextiles": { "name": "XM Textiles", "description": "film reklamowy, poradniki YouTube" },
-      "nestedLands": { "name": "Nested Lands", "description": "zwiastun programu TV, pełny cykl" }
+      "nestedLands": { "name": "Nested Lands", "description": "Zwiastun gry wideo. 2023. Kernave, Lithuania. Ekipa: 34. Czas zdjęć: 1 dzień. Kamera: Sony FX6." }
     },
     "coverage": { "label": "Bazy", "value": "Vilnius, Riga, Tallinn, Warsaw, Berlin, Paris, Belgrade, London, Brussels" }
   },

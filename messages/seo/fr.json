@@ -63,7 +63,7 @@
     "title": "Société de production vidéo",
     "serviceLink": "Service : video production",
     "company": { "label": "Société", "value": "Poerator" },
-    "services": { "label": "Services", "value": "publicités, films de marque, documentaires" },
+    "services": { "label": "Services", "value": "Poerator produit des publicités, des films de marque, des documentaires et des longs métrages, ainsi que des captations de concerts, des bandes-annonces et des guides vidéo pour YouTube." },
     "scope": { "label": "Périmètre", "value": "du concept à la livraison finale" },
     "sections": {
       "services": "Services",
@@ -73,11 +73,15 @@
       "coverage": "Zone de couverture",
       "requestQuote": "Demander un devis"
     },
-    "serviceItems": ["Publicités", "Films de marque", "Documentaires", "Bandes-annonces", "Guides YouTube"],
+    "serviceLabels": ["Publicités", "Films de marque", "Films documentaires", "Longs métrages", "Captation de concerts", "Bandes-annonces", "Guides YouTube"],
+    "serviceItems": ["Production publicitaire", "Production de films de marque", "Production de films documentaires", "Production de longs métrages", "Captation de concerts", "Production de bandes-annonces", "Guides vidéo pour YouTube"],
     "production": {
       "scope": { "label": "Périmètre", "value": "du concept à la livraison finale" },
-      "cycle": { "label": "Cycle de production", "value": "cycle complet" },
-      "motionGraphics": { "label": "Motion design", "value": "habillage broadcast, graphismes AR" }
+      "cycle": { "label": "Cycle", "value": "du concept à la livraison finale" },
+      "formats": { "label": "Formats", "value": "publicité, concerts, longs métrages, films documentaires, bandes-annonces, guides vidéo" },
+      "motionGraphics": { "label": "Graphiques", "value": "habillage broadcast, graphismes AR" },
+      "equipment": { "label": "Équipement", "value": "voir la section Équipement pour les caméras, objectifs, prises de vue sur le terrain et éclairages" },
+      "cities": { "label": "Villes", "value": "Vilnius, Riga, Tallinn, Warsaw, Berlin, Paris, Belgrade, London, Brussels" }
     },
     "equipment": {
       "cameras": { "label": "Caméras", "value": "Blackmagic URSA Broadcast G2" },
@@ -88,7 +92,7 @@
     "projects": {
       "gurtam": { "name": "GURTAM", "description": "publicité, service de production complet" },
       "xmTextiles": { "name": "XM Textiles", "description": "vidéo publicitaire, guides YouTube" },
-      "nestedLands": { "name": "Nested Lands", "description": "bande-annonce de série, cycle complet" }
+      "nestedLands": { "name": "Nested Lands", "description": "Bande-annonce de jeu vidéo. 2023. Kernave, Lithuania. Équipe : 34. Durée de tournage : 1 jour. Caméra : Sony FX6." }
     },
     "coverage": { "label": "Hubs", "value": "Vilnius, Riga, Tallinn, Warsaw, Berlin, Paris, Belgrade, London, Brussels" }
   },

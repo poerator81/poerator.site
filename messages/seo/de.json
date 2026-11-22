@@ -63,7 +63,7 @@
     "title": "Videoproduktionsunternehmen",
     "serviceLink": "Service: Video production",
     "company": { "label": "Unternehmen", "value": "Poerator" },
-    "services": { "label": "Leistungen", "value": "Werbespots, Markenfilme, Dokumentarfilme" },
+    "services": { "label": "Leistungen", "value": "Poerator produziert Werbung, Markenfilme, Dokumentarfilme und Spielfilme sowie Konzertaufzeichnungen, Teaser-Trailer und Video-Guides für YouTube, vom Konzept bis zur finalen Lieferung." },
     "scope": { "label": "Umfang", "value": "vom Konzept bis zur finalen Lieferung" },
     "sections": {
       "services": "Leistungen",
@@ -73,11 +73,15 @@
       "coverage": "Einsatzgebiet",
       "requestQuote": "Angebot anfordern"
     },
-    "serviceItems": ["Werbespots", "Markenfilme", "Dokumentarfilme", "Teaser-Trailer", "YouTube-Anleitungen"],
+    "serviceLabels": ["Werbespots", "Markenfilme", "Dokumentarfilme", "Spielfilme", "Konzertaufzeichnung", "Teaser-Trailer", "YouTube-Guides"],
+    "serviceItems": ["Werbeproduktion", "Markenfilmproduktion", "Dokumentarfilmproduktion", "Spielfilmproduktion", "Konzertaufzeichnung", "Teaser-Trailer-Produktion", "Video-Guides für YouTube"],
     "production": {
       "scope": { "label": "Umfang", "value": "vom Konzept bis zur finalen Lieferung" },
-      "cycle": { "label": "Produktionszyklus", "value": "kompletter Produktionszyklus" },
-      "motionGraphics": { "label": "Motion Graphics", "value": "Broadcast-Grafiken, AR-Grafiken" }
+      "cycle": { "label": "Ablauf", "value": "vom Konzept bis zur finalen Lieferung" },
+      "formats": { "label": "Formate", "value": "Werbung, Konzerte, Spielfilme, Dokumentarfilme, Teaser-Trailer, Videoguides" },
+      "motionGraphics": { "label": "Grafik", "value": "Broadcast-Grafiken, AR-Grafiken" },
+      "equipment": { "label": "Ausrüstung", "value": "siehe Abschnitt Ausrüstung für Kameras, Objektive, mobile Aufnahmen und Licht" },
+      "cities": { "label": "Städte", "value": "Vilnius, Riga, Tallinn, Warsaw, Berlin, Paris, Belgrade, London, Brussels" }
     },
     "equipment": {
       "cameras": { "label": "Kameras", "value": "Blackmagic URSA Broadcast G2" },
@@ -88,7 +92,7 @@
     "projects": {
       "gurtam": { "name": "GURTAM", "description": "Werbespot, komplette Produktionsbetreuung" },
       "xmTextiles": { "name": "XM Textiles", "description": "Werbevideo, YouTube-Anleitungen" },
-      "nestedLands": { "name": "Nested Lands", "description": "Serien-Teaser, kompletter Produktionszyklus" }
+      "nestedLands": { "name": "Nested Lands", "description": "Teaser-Trailer für ein Videospiel. 2023. Kernave, Lithuania. Crew: 34. Drehzeit: 1 Tag. Kamera: Sony FX6." }
     },
     "coverage": { "label": "Standorte", "value": "Vilnius, Riga, Tallinn, Warsaw, Berlin, Paris, Belgrade, London, Brussels" }
   },
