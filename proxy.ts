@@ -7,6 +7,8 @@ const RENAMED_CASES: Record<string, string> = {
 const RENAMED_EQUIPMENT: Record<string, { category: string; slug: string }> = {
   "fujinon-xa20sx8-5berm-k3-eng-lens": { category: "lenses", slug: "fujinon-xa20sx8-5berm-k32-3-8-5-170mm-eng-xa-exceed-series-hd-zoom-lens" },
   "usb-c-rechargeable-camera-battery-for-sony-np-f970": { category: "power-batteries", slug: "smallrig-np-f970-battery-7800-mah" },
+  "blackmagicvideo-assist-5-3g": { category: "cameras", slug: "blackmagic-video-assist-5-3g" },
+  "blackmagic-mini-converteroptical-fiber-12g": { category: "switching-control", slug: "blackmagic-mini-converter-optical-fiber-12g" },
 };
 const prefixedLocales = new Set(["en", "de", "fr", "pl", "lt"]);
 
@@ -27,7 +29,7 @@ export function proxy(request: NextRequest) {
     return NextResponse.redirect(url, 308);
   }
 
-  const equipmentAlias = pathname.match(/^\/(?:(en|de|fr|pl|lt)\/)?equipment\/(lenses|power-batteries)\/([^/]+)\/?$/);
+  const equipmentAlias = pathname.match(/^\/(?:(en|de|fr|pl|lt)\/)?equipment\/([^/]+)\/([^/]+)\/?$/);
   if (equipmentAlias) {
     const target = RENAMED_EQUIPMENT[equipmentAlias[3]];
     if (target && target.category === equipmentAlias[2]) {
