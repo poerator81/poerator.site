@@ -6,7 +6,7 @@ type Relation = { slug: string };
 const RELATIONS: Record<string, Relation[]> = {
   "blackmagic-ursa-studio-viewfinder-g2": [{ slug: "blackmagic-ursa-broadcast-g2" }],
   "fujinon-digi-power-a22x7-8berd-s48b-78-172mm-f1-8-2-3-b4-mount": [
-    { slug: "fujinon-xa20sx8-5berm-k3-eng-lens" },
+    { slug: "fujinon-xa20sx8-5berm-k32-3-8-5-170mm-eng-xa-exceed-series-hd-zoom-lens" },
     { slug: "fujinon-srd-92b-zoom-demand" },
     { slug: "blackmagic-ursa-broadcast-g2" },
   ],
@@ -45,7 +45,7 @@ const RELATIONS: Record<string, Relation[]> = {
   "neewer-35-4-90cm-softbox": [{ slug: "amaran-ray-360c" }],
   "shape-c-stand-40-sliding-leg-10-6": [{ slug: "amaran-ray-360c" }],
   "smallrig-78-7-200cm-light-stand": [{ slug: "amaran-ray-360c" }],
-  "fujinon-xa20sx8-5berm-k3-eng-lens": [{ slug: "fujinon-digi-power-a22x7-8berd-s48b-78-172mm-f1-8-2-3-b4-mount" }],
+  "fujinon-xa20sx8-5berm-k32-3-8-5-170mm-eng-xa-exceed-series-hd-zoom-lens": [{ slug: "fujinon-digi-power-a22x7-8berd-s48b-78-172mm-f1-8-2-3-b4-mount" }],
   "decklink-duo-2": [{ slug: "decklink-quad-2" }],
   "decklink-duo-3": [{ slug: "decklink-quad-2" }],
   "decklink-duo-4": [{ slug: "decklink-quad-2" }],

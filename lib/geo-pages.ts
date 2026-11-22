@@ -143,6 +143,6 @@ export const DELIVERY_DAYS: Record<string, L> = {
 export const RELATED_EQUIPMENT = [
   { category: "switching-control", slug: "atem-4-m-e-constellation-4k" },
   { category: "audio-comms", slug: "hollyland-solidcom-c1-pro-8s" },
-  { category: "lenses", slug: "fujinon-xa20sx8-5berm-k3-eng-lens" },
+  { category: "lenses", slug: "fujinon-xa20sx8-5berm-k32-3-8-5-170mm-eng-xa-exceed-series-hd-zoom-lens" },
   { category: "cameras", slug: "blackmagic-micro-studio-camera-4k-g2" },
 ];

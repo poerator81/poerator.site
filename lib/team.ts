@@ -21,7 +21,7 @@ const ATEM_2 = { category: "switching-control", slug: "atem-2-m-e-advanced-panel
 const VIDEOHUB = { category: "switching-control", slug: "blackmagic-videohub-40x40-12g", name: "Blackmagic Videohub 40x40 12G" };
 const URSA_G2 = { category: "cameras", slug: "blackmagic-ursa-broadcast-g2", name: "Blackmagic URSA Broadcast G2" };
 const URSA_12K = { category: "cameras", slug: "blackmagic-ursa-mini-pro-12k", name: "Blackmagic URSA Mini Pro 12K" };
-const FUJINON = { category: "lenses", slug: "fujinon-xa20sx8-5berm-k3-eng-lens", name: "Fujinon XA20sx8.5BERM-K3 ENG Lens" };
+const FUJINON = { category: "lenses", slug: "fujinon-xa20sx8-5berm-k32-3-8-5-170mm-eng-xa-exceed-series-hd-zoom-lens", name: "Fujinon XA20sx8.5BERM-K3 ENG Lens" };
 const STREAM_DECK = { category: "switching-control", slug: "stream-deck-xl-expanded-32-key", name: "Stream Deck XL Expanded 32-Key" };
 
 export const TEAM: TeamMember[] = [
