@@ -547,6 +547,7 @@ export const CASE_CONTENT: Record<string, CaseContent> = {
       format: x("6-camera concert shoot for YouTube", "Konzertaufzeichnung mit 6 Kameras für YouTube", "Captation de concert à 6 caméras pour YouTube", "Filmowanie koncertu 6 kamerami na YouTube", "Koncerto filmavimas 6 kameromis YouTube"),
       venue: "Palanga, Lithuania",
       client: "Adomas Vyšniauskas",
+      crew: x("7, plus a photographer", "7, plus ein Fotograf", "7, plus un photographe", "7, plus fotograf", "7, taip pat fotografas"),
       date: x("August 2026", "August 2026", "Août 2026", "Sierpień 2026", "2026 m. rugpjūtis"),
       scope: [x("Filming only", "Nur Dreharbeiten", "Tournage uniquement", "Tylko filmowanie", "Tik filmavimas")],
     },
