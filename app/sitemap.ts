@@ -25,7 +25,7 @@ const FIXED_LASTMOD: Record<string, Date> = {
 };
 
 const GEO_LASTMOD = new Date("2026-10-22T00:00:00+03:00");
-const TEAM_LASTMOD = new Date("2026-10-22T00:00:00+03:00");
+const TEAM_LASTMOD = new Date("2026-11-23T00:00:00Z");
 
 type Slugs = {
   equipment: { slug: string; category: string; updated: string }[];

@@ -10,13 +10,14 @@ export type ResultLabel =
 export type CaseContent = {
   header: {
     project: Text; format: Text; venue?: Text; crew?: Text; date?: Text; dates?: Text; client?: Text;
-    team?: string[]; scope?: Text[]; deliverables?: Text[]; deliverablesNote?: Text;
+    team?: string[]; teamLabel?: Text; scope?: Text[]; deliverables?: Text[]; deliverablesNote?: Text;
   };
   plainRelated?: boolean;
   summaryFromHeader?: boolean;
   challenge?: Text;
   kit?: KitPart[][];
   constraints?: Text[];
+  externalLinks?: { url: string; label: Text; context: string; group: "competition" | "channel" }[];
   result?: { label: ResultLabel; value: Text }[];
   narrative?: Text;
   seoTitle: Text;
@@ -55,6 +56,8 @@ export const CASE_LABELS: Record<string, LocaleText> = {
   ar: x("AR", "AR", "AR", "AR", "AR"),
   use: x("Use", "Einsatz", "Usage", "Zastosowanie", "Naudojimas"),
   partner: x("Partner", "Partner", "Partenaire", "Partner", "Partneris"),
+  competitionLinks: x("Competitions", "Wettbewerbe", "Compétitions", "Rozgrywki", "Varžybos"),
+  channelLinks: x("Channels", "Kanäle", "Chaînes", "Kanały", "Kanalai"),
 };
 
 const atem = { equipment: { category: "switching-control", slug: "atem-4-m-e-constellation-4k" } };
@@ -538,6 +541,52 @@ export const CASE_CONTENT: Record<string, CaseContent> = {
       "Mozzart Bet Super Liga, graphismes AR, saison 2026-27 : 7 matchs par semaine, football et basket, incrustations sur le terrain. Poerator.",
       "Mozzart Bet Super Liga, grafika AR, sezon 2026-27: 7 meczów w tygodniu, piłka i koszykówka, nakładki na boisku. Poerator.",
       "Mozzart Bet Super Liga AR grafika, 2026–27 m.: 7 rungtynės per savaitę, futbolas ir krepšinis, aikštės uždangos. Poerator.",
+    ),
+  },
+
+  "estonian-football-association-match-broadcasts": {
+    header: {
+      project: x("Estonian Football Association match broadcasts", "Spielübertragungen des estnischen Fußballverbands", "Diffusions des matchs de la fédération estonienne de football", "Transmisje meczów Estońskiego Związku Piłki Nożnej", "Estijos futbolo asociacijos rungtynių transliacijos"),
+      client: x("Estonian Football Association (Eesti Jalgpalli Liit)", "Estnischer Fußballverband (Eesti Jalgpalli Liit)", "Fédération estonienne de football (Eesti Jalgpalli Liit)", "Estoński Związek Piłki Nożnej (Eesti Jalgpalli Liit)", "Estijos futbolo asociacija (Eesti Jalgpalli Liit)"),
+      format: x("Full-season match broadcasts", "Spielübertragungen ganzer Saisons", "Diffusion des matchs de saisons complètes", "Transmisje meczów pełnych sezonów", "Visų sezonų rungtynių transliacijos"),
+      crew: x("5 permanent broadcast crews", "5 feste Übertragungsteams", "5 équipes de diffusion permanentes", "5 stałych ekip transmisyjnych", "5 nuolatinės transliacijų komandos"),
+      date: x("Since 2021", "Seit 2021", "Depuis 2021", "Od 2021 roku", "Nuo 2021 m."),
+      team: ["patrik-lissovenko"],
+      teamLabel: x("Team", "Team", "Équipe", "Zespół", "Komanda"),
+      scope: [
+        x("Esiliiga (men's football); Saalijalgpalli Meistriliiga (futsal)", "Esiliiga (Männerfußball); Saalijalgpalli Meistriliiga (Futsal)", "Esiliiga (football masculin) ; Saalijalgpalli Meistriliiga (futsal)", "Esiliiga (piłka nożna mężczyzn); Saalijalgpalli Meistriliiga (futsal)", "Esiliiga (vyrų futbolas); Saalijalgpalli Meistriliiga (futsalas)"),
+        x("About 90% of crew members have worked with Poerator since 2021", "Etwa 90 % der Teammitglieder arbeiten seit 2021 mit Poerator", "Environ 90 % des membres des équipes travaillent avec Poerator depuis 2021", "Około 90% członków ekip pracuje z Poerator od 2021 roku", "Apie 90 % komandų narių dirba su Poerator nuo 2021 m."),
+        x("VAR (video support for referees) at selected futsal matches", "VAR (Videounterstützung für Schiedsrichter) bei ausgewählten Futsalspielen", "VAR (assistance vidéo aux arbitres) lors de certains matchs de futsal", "VAR (wsparcie wideo dla sędziów) na wybranych meczach futsalu", "VAR (vaizdo pagalba teisėjams) per pasirinktas futsalo rungtynes"),
+        "YouTube",
+      ],
+    },
+    kit: [[ursaG2]],
+    externalLinks: [
+      { url: "https://jalgpall.ee/voistlused/53/esiliiga", group: "competition", context: "Esiliiga", label: x("Competition page", "Wettbewerbsseite", "Page de la compétition", "Strona rozgrywek", "Varžybų puslapis") },
+      { url: "https://jalgpall.ee/voistlused/125/saalijalgpall", group: "competition", context: "Saalijalgpalli Meistriliiga", label: x("Competition page", "Wettbewerbsseite", "Page de la compétition", "Strona rozgrywek", "Varžybų puslapis") },
+      { url: "https://www.youtube.com/@Esiliiga", group: "channel", context: "@Esiliiga", label: x("YouTube channel", "YouTube-Kanal", "Chaîne YouTube", "Kanał YouTube", "YouTube kanalas") },
+      { url: "https://www.youtube.com/@EJLTV", group: "channel", context: "@EJLTV", label: x("YouTube channel", "YouTube-Kanal", "Chaîne YouTube", "Kanał YouTube", "YouTube kanalas") },
+    ],
+    narrative: x(
+      "Full-season broadcasts of Esiliiga and Saalijalgpalli Meistriliiga for the Estonian Football Association (Eesti Jalgpalli Liit), since 2021.",
+      "Übertragungen ganzer Saisons der Esiliiga und Saalijalgpalli Meistriliiga für den estnischen Fußballverband (Eesti Jalgpalli Liit), seit 2021.",
+      "Diffusion des saisons complètes d'Esiliiga et de Saalijalgpalli Meistriliiga pour la fédération estonienne de football (Eesti Jalgpalli Liit), depuis 2021.",
+      "Transmisje pełnych sezonów Esiliiga i Saalijalgpalli Meistriliiga dla Estońskiego Związku Piłki Nożnej (Eesti Jalgpalli Liit), od 2021 roku.",
+      "Esiliiga ir Saalijalgpalli Meistriliiga sezonų transliacijos Estijos futbolo asociacijai (Eesti Jalgpalli Liit), nuo 2021 m.",
+    ),
+    seoTitle: x(
+      "Estonian FA Broadcasts | Live Production | Poerator",
+      "Estnischer Fußballverband | Live-Produktion | Poerator",
+      "Fédération estonienne | Production live | Poerator",
+      "Estoński Związek Piłki Nożnej | Transmisje | Poerator",
+      "Estijos futbolo asociacija | Transliacijos | Poerator",
+    ),
+    seoDescription: x(
+      "Estonian Football Association match broadcasts since 2021: Esiliiga, Saalijalgpalli Meistriliiga, 5 crews and VAR at selected futsal matches.",
+      "Spielübertragungen für den estnischen Fußballverband seit 2021: Esiliiga, Saalijalgpalli Meistriliiga, 5 Teams und VAR bei ausgewählten Futsalspielen.",
+      "Diffusions pour la fédération estonienne depuis 2021 : Esiliiga, Saalijalgpalli Meistriliiga, 5 équipes et VAR lors de certains matchs de futsal.",
+      "Transmisje dla Estońskiego Związku Piłki Nożnej od 2021: Esiliiga, Saalijalgpalli Meistriliiga, 5 ekip i VAR na wybranych meczach futsalu.",
+      "Estijos futbolo asociacijos transliacijos nuo 2021 m.: Esiliiga, Saalijalgpalli Meistriliiga, 5 komandos ir VAR pasirinktose futsalo rungtynėse.",
     ),
   },
 

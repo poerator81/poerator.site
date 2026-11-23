@@ -15,4 +15,5 @@ export const CASE_SERVICES: Record<string, { delivered: DeliveredService; kind: 
   "video-production-for-xm-textiles": { delivered: "video", kind: "commercialVideo" },
   "nested-lands-game-teaser-trailer": { delivered: "video", kind: "teaser" },
   "adomas-vysniauskas-symphony-concert-palanga": { delivered: "video", kind: "concert", anchorIndex: 0 },
+  "estonian-football-association-match-broadcasts": { delivered: "live", kind: "sports", anchorIndex: 0 },
 };

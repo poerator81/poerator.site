@@ -7,6 +7,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { breadcrumbJsonLd, CITIES, ORG_ID } from "@/lib/jsonld";
+import { getCaseBySlug } from "@/lib/content";
 import { absoluteUrl, pageMetadata, SITE_URL } from "@/lib/seo";
 import { SEO_LABELS } from "@/lib/seo-copy";
 import {
@@ -15,20 +16,25 @@ import {
 } from "@/lib/team";
 import { localizedPath, locales, type Locale } from "@/i18n";
 
-export const revalidate = 3600;
+export const revalidate = 60;
 
 const label = (key: string, locale: Locale) => TEAM_LABELS[key][locale];
-const caseSlugs = (member: TeamMember) => member.cases === "all" ? Object.keys(CASE_NAMES) : member.cases;
+const pendingCase = "estonian-football-association-match-broadcasts";
+const availableCaseSlugs = async () => {
+  const published = await getCaseBySlug(pendingCase);
+  return Object.keys(CASE_NAMES).filter((slug) => slug !== pendingCase || published);
+};
 const area = (role: TeamMember["roles"][number], locale: Locale) => RESPONSIBILITY[role][locale];
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale: localeParam } = await params;
   const locale = localeParam as Locale;
+  const availableCases = await availableCaseSlugs();
   return pageMetadata({
     locale,
     path: "/team",
     title: label("team", locale),
-    description: `${label("teamSize", locale)}: ${TEAM.length}. ${label("locations", locale)}: ${TEAM_CITIES.join(", ")}. ${label("projects", locale)}: ${Object.keys(CASE_NAMES).length}.`,
+    description: `${label("teamSize", locale)}: ${TEAM.length}. ${label("locations", locale)}: ${TEAM_CITIES.join(", ")}. ${label("projects", locale)}: ${availableCases.length}.`,
   });
 }
 
@@ -44,6 +50,8 @@ export default async function TeamPage({ params }: { params: Promise<{ locale: s
   const locale = localeParam as Locale;
   if (!locales.includes(locale)) notFound();
   setRequestLocale(locale);
+  const availableCases = await availableCaseSlugs();
+  const caseSlugs = (member: TeamMember) => member.cases === "all" ? availableCases : member.cases.filter((slug) => availableCases.includes(slug));
   const common = await getTranslations({ locale, namespace: "common" });
   const seoNames = SEO_LABELS[locale].serviceNames;
   const quote = <Link href={localizedPath(locale, "/contact")} className="mt-6 inline-flex bg-waveform-cyan px-6 py-4 font-mono text-xs font-bold uppercase tracking-wider text-legal-black">{common("requestQuote")}</Link>;

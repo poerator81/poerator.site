@@ -30,10 +30,11 @@ export const TEAM: TeamMember[] = [
   { slug: "konstantin-ostapenko", name: "Konstantin Ostapenko", roles: ["camera"], city: "Vilnius", instagram: "https://www.instagram.com/kostia.ostap/", languages: ["en", "lt", "ru"], equipment: [URSA_G2, URSA_12K, FUJINON], cases: ["corgi-race-vilnius-2026", "corgi-race-vilnius-2025-stream"] },
   { slug: "hlib-dubrovin", name: "Hlib Dubrovin", roles: ["technical"], city: "Paris", instagram: "https://www.instagram.com/doobrovin_gleb/", languages: ["en", "fr", "ru"], equipment: [ATEM_4, ATEM_2, VIDEOHUB, URSA_G2], cases: ["ewc-2026-paris"] },
   { slug: "andrej-vinogradov", name: "Andrej Vinogradov", roles: ["vision"], city: "Vilnius", instagram: "https://www.instagram.com/andrej_vinogradov/", linkedin: "https://www.linkedin.com/in/andrej-vinogradov-91274610b/", languages: ["en", "lt", "ru"], equipment: [ATEM_4, ATEM_2, STREAM_DECK], cases: ["iem-cologne", "corgi-race-vilnius-2025-stream", "esports-community-casts", "ewc-2026-paris"] },
-  { slug: "patrik-lissovenko", name: "Patrik Lissovenko", roles: ["camera"], city: "Tallinn", instagram: "https://www.instagram.com/patrik.lissovenko/", languages: ["en", "et", "ru"], equipment: [URSA_G2, URSA_12K, FUJINON], cases: ["fiba-3x3-split-challenger-tournament-broadcasting"] },
+  { slug: "patrik-lissovenko", name: "Patrik Lissovenko", roles: ["camera"], city: "Tallinn", instagram: "https://www.instagram.com/patrik.lissovenko/", languages: ["en", "et", "ru"], equipment: [URSA_G2, URSA_12K, FUJINON], cases: ["fiba-3x3-split-challenger-tournament-broadcasting", "estonian-football-association-match-broadcasts"] },
 ];
 
 export const CASE_NAMES: Record<string, string> = {
+  "estonian-football-association-match-broadcasts": "Estonian Football Association Match Broadcasts",
   "corgi-race-vilnius-2025-stream": "Corgi Race Vilnius 2025 Stream",
   "corgi-race-vilnius-2026": "Corgi Race Vilnius 2026",
   "esports-community-casts": "Esports Community Casts",

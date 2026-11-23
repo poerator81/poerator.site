@@ -30,7 +30,7 @@ export function CaseHeader({ content, locale }: { content: CaseContent; locale: 
     <dl className="mt-4 space-y-2 font-mono text-sm">
       <FieldRows content={content} locale={locale} keys={HEADER_KEYS} />
       {members.length > 0 && <div className="flex flex-wrap gap-x-3">
-        <dt className="text-surface-muted">{label("team", locale)}:</dt>
+        <dt className="text-surface-muted">{header.teamLabel ? resolveText(header.teamLabel, locale) : label("team", locale)}:</dt>
         <dd className="text-white">{members.map((member, i) => <span key={member.slug}>
           {i > 0 && ", "}
           <Link href={`${localizedPath(locale, "/team")}#${member.slug}`} className="text-waveform-cyan hover:underline">{member.name}</Link>
@@ -84,6 +84,17 @@ export async function CaseBody({ content, locale, quoteLabel }: { content: CaseC
         {kit.map((parts, i) => <KitItem key={i} parts={parts} locale={locale} linked={linked} />)}
       </ul>
     </section>}
+    {(["competition", "channel"] as const).map((group) => {
+      const links = content.externalLinks?.filter((item) => item.group === group) ?? [];
+      return links.length > 0 && <section className="mt-10" key={group}>
+      <h2 className={h2}>{label(group === "competition" ? "competitionLinks" : "channelLinks", locale)}</h2>
+      <ul className="mt-3 list-disc space-y-1 pl-6 text-surface-muted">
+        {links.map(({ url, context, label: linkLabel }) => <li key={url}>
+          {context}: <a href={url} target="_blank" rel="noopener noreferrer" className="text-waveform-cyan hover:underline">{resolveText(linkLabel, locale)}</a>
+        </li>)}
+      </ul>
+    </section>;
+    })}
     {constraints.length > 0 && <section className="mt-10">
       <h2 className={h2}>{label("constraints", locale)}</h2>
       <ul className="mt-3 list-disc space-y-1 pl-6 text-surface-muted">
