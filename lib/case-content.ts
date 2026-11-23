@@ -541,6 +541,39 @@ export const CASE_CONTENT: Record<string, CaseContent> = {
     ),
   },
 
+  "adomas-vysniauskas-symphony-concert-palanga": {
+    header: {
+      project: "Adomas Vyšniauskas",
+      format: x("6-camera concert shoot for YouTube", "Konzertaufzeichnung mit 6 Kameras für YouTube", "Captation de concert à 6 caméras pour YouTube", "Filmowanie koncertu 6 kamerami na YouTube", "Koncerto filmavimas 6 kameromis YouTube"),
+      venue: "Palanga, Lithuania",
+      client: "Adomas Vyšniauskas",
+      date: x("August 2026", "August 2026", "Août 2026", "Sierpień 2026", "2026 m. rugpjūtis"),
+      scope: [x("Filming only", "Nur Dreharbeiten", "Tournage uniquement", "Tylko filmowanie", "Tik filmavimas")],
+    },
+    kit: [[x("6 cameras", "6 Kameras", "6 caméras", "6 kamer", "6 kameros")]],
+    narrative: x(
+      "6-camera filming of a concert with a symphony orchestra, Palanga, August 2026.",
+      "Konzertaufzeichnung mit 6 Kameras und einem Symphonieorchester, Palanga, August 2026.",
+      "Captation à 6 caméras d'un concert avec orchestre symphonique, Palanga, août 2026.",
+      "Filmowanie koncertu z orkiestrą symfoniczną 6 kamerami, Palanga, sierpień 2026.",
+      "Koncerto su simfoniniu orkestru filmavimas 6 kameromis, Palanga, 2026 m. rugpjūtis.",
+    ),
+    seoTitle: x(
+      "Adomas Vyšniauskas Concert Filming | Video Production | Poerator",
+      "Adomas Vyšniauskas Konzertfilm | Videoproduktion | Poerator",
+      "Adomas Vyšniauskas Concert | Production vidéo | Poerator",
+      "Adomas Vyšniauskas Koncert | Produkcja wideo | Poerator",
+      "Adomas Vyšniauskas Koncertas | Video gamyba | Poerator",
+    ),
+    seoDescription: x(
+      "Concert filming: 6 cameras, symphony orchestra, Palanga, Lithuania, August 2026. Filming by Poerator.",
+      "Konzertaufzeichnung: 6 Kameras, Symphonieorchester, Palanga, Litauen, August 2026. Aufzeichnung von Poerator.",
+      "Captation de concert : 6 caméras, orchestre symphonique, Palanga, Lituanie, août 2026. Tournage par Poerator.",
+      "Filmowanie koncertu: 6 kamer, orkiestra symfoniczna, Palanga, Litwa, sierpień 2026. Filmowanie: Poerator.",
+      "Koncerto filmavimas: 6 kameros, simfoninis orkestras, Palanga, Lietuva, 2026 m. rugpjūtis. Filmavo Poerator.",
+    ),
+  },
+
   "nested-lands-game-teaser-trailer": {
     header: {
       project: "Nested Lands Official Game Teaser Trailer",

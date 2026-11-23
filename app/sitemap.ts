@@ -20,7 +20,7 @@ const STATIC_PATHS = [
 
 // Update a static page's fixed lastmod in the same commit as its content.
 const FIXED_LASTMOD: Record<string, Date> = {
-  "/video-production": new Date("2026-11-22T00:00:00Z"),
+  "/video-production": new Date("2026-11-23T00:00:00Z"),
   "/ob-van": new Date("2026-10-22T00:00:00+03:00"),
 };
 

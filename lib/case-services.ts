@@ -1,6 +1,6 @@
 export type DeliveredService = "live" | "video";
 
-export const CASE_SERVICES: Record<string, { delivered: DeliveredService; kind: string }> = {
+export const CASE_SERVICES: Record<string, { delivered: DeliveredService; kind: string; anchorIndex?: number }> = {
   "corgi-race-vilnius-2025-stream": { delivered: "live", kind: "liveBroadcast" },
   "corgi-race-vilnius-2026": { delivered: "live", kind: "multiCamera" },
   "esports-community-casts": { delivered: "live", kind: "esports" },
@@ -14,4 +14,5 @@ export const CASE_SERVICES: Record<string, { delivered: DeliveredService; kind: 
   "gurtam-commercial-production-service": { delivered: "video", kind: "commercial" },
   "video-production-for-xm-textiles": { delivered: "video", kind: "commercialVideo" },
   "nested-lands-game-teaser-trailer": { delivered: "video", kind: "teaser" },
+  "adomas-vysniauskas-symphony-concert-palanga": { delivered: "video", kind: "concert", anchorIndex: 0 },
 };

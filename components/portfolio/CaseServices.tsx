@@ -9,7 +9,7 @@ export function CaseServices({ locale, caseSlug }: { locale: Locale; caseSlug: s
   const item = CASE_SERVICES[caseSlug];
   if (!item) throw new Error(`Missing related-service configuration for case "${caseSlug}"`);
   const copy = SEO_LABELS[locale];
-  const index = CASE_ORDER.indexOf(caseSlug);
+  const index = item.anchorIndex ?? CASE_ORDER.indexOf(caseSlug);
   const deliveredPath = item.delivered === "live" ? "/services" : "/video-production";
   const deliveredName = item.delivered === "live" ? copy.serviceNames.live : copy.serviceNames.video;
   const deliveredAnchor = `${deliveredName}: ${copy.deliveredKinds[item.kind as keyof typeof copy.deliveredKinds]}`;

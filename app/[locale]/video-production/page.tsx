@@ -10,7 +10,7 @@ import { breadcrumbJsonLd, serviceJsonLd } from "@/lib/jsonld";
 import { pageMetadata } from "@/lib/seo";
 import { SEO_LABELS, SERVICE_SCHEMA_COPY } from "@/lib/seo-copy";
 import { VIDEO_EQUIPMENT_LINKS, equipmentHref } from "@/lib/equipment-links";
-import { getEquipment } from "@/lib/content";
+import { getCases, getEquipment } from "@/lib/content";
 import { FLEET_COPY } from "@/lib/capability-groups";
 import { localizedPath, locales, type Locale } from "@/i18n";
 
@@ -27,10 +27,11 @@ export default async function VideoProductionPage({ params }: { params: Promise<
   const locale = localeParam as Locale;
   if (!locales.includes(locale)) notFound();
   setRequestLocale(locale);
-  const [t, common, items] = await Promise.all([
+  const [t, common, items, cases] = await Promise.all([
     getTranslations({ locale, namespace: "videoProduction" }),
     getTranslations({ locale, namespace: "common" }),
     getEquipment(),
+    getCases(),
   ]);
   const fields = (prefix: string, keys: string[]) => keys.map((key) => [
     t(`${prefix}.${key}.label`),
@@ -47,6 +48,9 @@ export default async function VideoProductionPage({ params }: { params: Promise<
     { key: "gurtam", slug: "gurtam-commercial-production-service" },
     { key: "xmTextiles", slug: "video-production-for-xm-textiles" },
     { key: "nestedLands", slug: "nested-lands-game-teaser-trailer" },
+    ...cases.some((item) => item.slug === "adomas-vysniauskas-symphony-concert-palanga")
+      ? [{ key: "adomas", slug: "adomas-vysniauskas-symphony-concert-palanga" }]
+      : [],
   ];
   const quoteLink = <Link href={localizedPath(locale, "/contact")} className="mt-6 inline-flex bg-waveform-cyan px-6 py-4 font-mono text-xs font-bold uppercase tracking-wider text-legal-black">[{common("requestQuote")}]</Link>;
 

@@ -74,7 +74,7 @@
       "requestQuote": "Angebot anfordern"
     },
     "serviceLabels": ["Werbespots", "Markenfilme", "Dokumentarfilme", "Spielfilme", "Konzertaufzeichnung", "Teaser-Trailer", "YouTube-Guides"],
-    "serviceItems": ["Werbeproduktion", "Markenfilmproduktion", "Dokumentarfilmproduktion", "Spielfilmproduktion", "Konzertaufzeichnung", "Teaser-Trailer-Produktion", "Video-Guides für YouTube"],
+    "serviceItems": ["Werbeproduktion", "Markenfilmproduktion", "Dokumentarfilmproduktion", "Spielfilmproduktion", "Konzertaufzeichnung mit mehreren Kameras", "Teaser-Trailer-Produktion", "Video-Guides für YouTube"],
     "production": {
       "scope": { "label": "Umfang", "value": "vom Konzept bis zur finalen Lieferung" },
       "cycle": { "label": "Ablauf", "value": "vom Konzept bis zur finalen Lieferung" },
@@ -92,7 +92,8 @@
     "projects": {
       "gurtam": { "name": "GURTAM", "description": "Werbespot, komplette Produktionsbetreuung" },
       "xmTextiles": { "name": "XM Textiles", "description": "Werbevideo, YouTube-Anleitungen" },
-      "nestedLands": { "name": "Nested Lands", "description": "Teaser-Trailer für ein Videospiel. 2023. Kernave, Lithuania. Crew: 34. Drehzeit: 1 Tag. Kamera: Sony FX6." }
+      "nestedLands": { "name": "Nested Lands", "description": "Teaser-Trailer für ein Videospiel. 2023. Kernave, Lithuania. Crew: 34. Drehzeit: 1 Tag. Kamera: Sony FX6." },
+      "adomas": { "name": "Adomas Vyšniauskas", "description": "Konzert. 2026. Palanga, Lithuania. 6 Kameras. Nur Dreharbeiten." }
     },
     "coverage": { "label": "Standorte", "value": "Vilnius, Riga, Tallinn, Warsaw, Berlin, Paris, Belgrade, London, Brussels" }
   },

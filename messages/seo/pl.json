@@ -74,7 +74,7 @@
       "requestQuote": "Poproś o wycenę"
     },
     "serviceLabels": ["Reklamy", "Filmy wizerunkowe", "Filmy dokumentalne", "Filmy fabularne", "Filmowanie koncertów", "Zwiastuny", "Poradniki YouTube"],
-    "serviceItems": ["Produkcja reklamowa", "Produkcja filmów wizerunkowych", "Produkcja filmów dokumentalnych", "Produkcja filmów fabularnych", "Filmowanie koncertów", "Produkcja zwiastunów", "Poradniki wideo na YouTube"],
+    "serviceItems": ["Produkcja reklamowa", "Produkcja filmów wizerunkowych", "Produkcja filmów dokumentalnych", "Produkcja filmów fabularnych", "Filmowanie koncertów wieloma kamerami", "Produkcja zwiastunów", "Poradniki wideo na YouTube"],
     "production": {
       "scope": { "label": "Zakres", "value": "od koncepcji do finalnej wersji" },
       "cycle": { "label": "Cykl", "value": "od koncepcji do finalnej wersji" },
@@ -92,7 +92,8 @@
     "projects": {
       "gurtam": { "name": "GURTAM", "description": "reklama, kompleksowa realizacja produkcji" },
       "xmTextiles": { "name": "XM Textiles", "description": "film reklamowy, poradniki YouTube" },
-      "nestedLands": { "name": "Nested Lands", "description": "Zwiastun gry wideo. 2023. Kernave, Lithuania. Ekipa: 34. Czas zdjęć: 1 dzień. Kamera: Sony FX6." }
+      "nestedLands": { "name": "Nested Lands", "description": "Zwiastun gry wideo. 2023. Kernave, Lithuania. Ekipa: 34. Czas zdjęć: 1 dzień. Kamera: Sony FX6." },
+      "adomas": { "name": "Adomas Vyšniauskas", "description": "Koncert. 2026. Palanga, Lithuania. 6 kamer. Tylko filmowanie." }
     },
     "coverage": { "label": "Bazy", "value": "Vilnius, Riga, Tallinn, Warsaw, Berlin, Paris, Belgrade, London, Brussels" }
   },

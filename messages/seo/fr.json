@@ -74,7 +74,7 @@
       "requestQuote": "Demander un devis"
     },
     "serviceLabels": ["Publicités", "Films de marque", "Films documentaires", "Longs métrages", "Captation de concerts", "Bandes-annonces", "Guides YouTube"],
-    "serviceItems": ["Production publicitaire", "Production de films de marque", "Production de films documentaires", "Production de longs métrages", "Captation de concerts", "Production de bandes-annonces", "Guides vidéo pour YouTube"],
+    "serviceItems": ["Production publicitaire", "Production de films de marque", "Production de films documentaires", "Production de longs métrages", "Captation de concerts multicaméra", "Production de bandes-annonces", "Guides vidéo pour YouTube"],
     "production": {
       "scope": { "label": "Périmètre", "value": "du concept à la livraison finale" },
       "cycle": { "label": "Cycle", "value": "du concept à la livraison finale" },
@@ -92,7 +92,8 @@
     "projects": {
       "gurtam": { "name": "GURTAM", "description": "publicité, service de production complet" },
       "xmTextiles": { "name": "XM Textiles", "description": "vidéo publicitaire, guides YouTube" },
-      "nestedLands": { "name": "Nested Lands", "description": "Bande-annonce de jeu vidéo. 2023. Kernave, Lithuania. Équipe : 34. Durée de tournage : 1 jour. Caméra : Sony FX6." }
+      "nestedLands": { "name": "Nested Lands", "description": "Bande-annonce de jeu vidéo. 2023. Kernave, Lithuania. Équipe : 34. Durée de tournage : 1 jour. Caméra : Sony FX6." },
+      "adomas": { "name": "Adomas Vyšniauskas", "description": "Concert. 2026. Palanga, Lithuania. 6 caméras. Tournage uniquement." }
     },
     "coverage": { "label": "Hubs", "value": "Vilnius, Riga, Tallinn, Warsaw, Berlin, Paris, Belgrade, London, Brussels" }
   },
