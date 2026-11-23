@@ -72,7 +72,7 @@ export default async function VideoProductionPage({ params }: { params: Promise<
       </section>
       <section className="border-t border-surface-border pt-6">
         <h2 className="text-2xl font-semibold text-white">{t("sections.productionScope")}</h2>
-        <div className="mt-4"><FieldList fields={fields("production", ["scope", "cycle", "formats", "motionGraphics", "equipment", "cities"])} /></div>
+        <div className="mt-4"><FieldList fields={fields("production", ["cycle", "formats", "motionGraphics", "equipment", "cities"])} /></div>
       </section>
       <section className="border-t border-surface-border pt-6">
         <h2 className="text-2xl font-semibold text-white">{t("sections.equipment")}</h2>
